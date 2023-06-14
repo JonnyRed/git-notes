@@ -7,6 +7,7 @@ Git.
 
 - [Introduction](#introduction)
 - [Content](#content)
+- [Introduction to Git and GitHub](#introduction-to-git-and-github)
 
 
 ---
@@ -57,3 +58,16 @@ Please note that these are personal notes, so they reflect my own experiences an
    - `git restore`: Undo local changes or staged local changes.
    - `git stash`: Saves local changes for later use.
    - `git reset --hard`: Discards local changes to all files permanently.
+
+
+## Introduction to Git and GitHub
+
+
+[Introduction to Git and GitHub] teaches you the basics of Git, a version control system, and GitHub, a web-based hosting service for Git repositories. The course covers topics such as creating and cloning repositories, working with branches, and resolving conflicts. It also includes hands-on labs that allow you to practice what you've learned.
+
+The course is divided into three weeks.
+* Week 1, you'll learn about the basics of Git and GitHub. You'll create your first repository and clone it onto your computer. You'll also learn about branches and how to use them to track changes to your code.
+* Week 2, you'll learn more about working with branches. You'll learn how to merge branches and how to resolve conflicts. You'll also learn about remote repositories and how to push and pull changes from them.
+* Week 3, you'll learn about some advanced Git concepts. You'll learn about tags, which are used to mark specific points in your code history. You'll also learn about rebasing and merging, which are two ways to change the history of your code.
+
+[Introduction to Git and GitHub]:https://www.coursera.org/learn/introduction-git-github/home/week/1
