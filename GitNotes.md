@@ -110,6 +110,45 @@ Inside the code editor:
 * Close the editor to make the commit
 * Then, use ```git log``` to review the commit you just made!
 
+### Standard commit message
+
+A standard commit message structure typically consists of a header and
+an optional body. The header provides a concise summary of the commit,
+while the body provides additional details and context. Here's an
+example of a standard commit message structure:
+
+```
+<type>: <subject>
+
+<body>
+```
+
+Let's break down each component:
+
+1. `<type>`: The type of the commit. It can be one of the following:
+
+   - **feat**: A new feature
+   - **fix**: A bug fix
+   - **docs**: Documentation changes
+   - **style**: Code style changes (e.g., formatting)
+   - **refactor**: Code refactoring (without adding new features or
+   fixing bugs)
+   - **test**: Adding or modifying tests
+   - **chore**: Other changes that don't fit into the above categories
+   (e.g., build scripts, tooling)
+
+2. `<subject>`: A brief and descriptive summary of the commit. It should
+start with a capital letter and not end with a period.
+
+3. `<body>` (optional): Additional information about the commit.
+This section can provide more context, explain the reasoning behind
+the changes, and include any relevant details.
+
+It's worth mentioning that different projects and teams may have their
+own conventions for commit messages. The above structure is a commonly
+used format, but it's not a strict requirement.
+It's important to follow the conventions established within your project or team for consistency and clarity.
+
 [Git Udacity's Commit Style](https://udacity.github.io/git-styleguide/)
 
 
