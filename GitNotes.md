@@ -214,17 +214,19 @@ git tag -delete v1.0
 git tag -d v1.0
 ```
 
-__Update tag on Server__
-
-```bash
-git push origin main v0.1
-```
 
 __Push all tags to server__
 If you have a lot of tags that you want to push up at once, you can also use the --tags option to the git push command. This will transfer all of your tags to the remote server that are not already there.
 
 ```bash
+git push --tags
 git push origin --tags
+```
+__View remote tags__
+
+```bash
+git ls-remote --tags origin
+git ls-remote --tags origin
 ```
 
 __Adding A Tag To A Past__
@@ -443,6 +445,7 @@ running ```git status```
 the ```git revert``` command is used to reverse a previously made commit:
 
 ```bash
+git revert HEAD
 git revert <SHA-of-commit-to-revert>
 ```
 
