@@ -73,6 +73,7 @@ git log --stat
 git log --pretty=oneline
 git log --pretty=[short|full|fuller]
 git log --oneline --decorate
+git log --graph --oneline
 git log --oneline --decorate --graph --all
 ```
 
@@ -326,12 +327,25 @@ This command is used to:
 
 ## Git Merge
 
+[Refer to Coursera Video][] on merging and [merge conflicts][]
 
 The git merge command is used to combine Git branches:
 
 ```bash
 git merge <name-of-branch-to-merge-in>
 ```
+To see log and history + graph of merge
+
+```bash
+git log --graph --oneline
+```
+
+To abort the current merge:
+
+```bash
+git merge --abort
+```
+
 
 When a merge happens, Git will:
 * Look at the branches that it's going to merge
@@ -373,6 +387,8 @@ There are two types of merges:
 * [git-merge](https://git-scm.com/docs/git-merge)
 * [git merge](https://www.atlassian.com/git/tutorials/git-merge)
 
+[Refer to Coursera Video]:./videos/merge.mp4
+[merge conflicts]:./videos/merge_conflicts.mp4
 ----
 
 __Merge Conflict__
@@ -415,6 +431,7 @@ Instead, you can amend the last commit (the one that updated the color of all of
 So you'd make changes to the necessary CSS and/or HTML files to get the forgotten link styled correctly, then you'd save all of the files that were modified, then you'd use git add to stage all of the modified files (just as if you were going to make a new commit!), but then you'd run ```git commit --amend``` to update the most-recent commit instead of creating a new one.
 
 ## Undo local changes
+
 [Undo Possibilities][]
 * When you make a change, but have not yet staged it, you can undo your
 work.
