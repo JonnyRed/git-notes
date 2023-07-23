@@ -71,3 +71,64 @@ The course is divided into three weeks.
 * Week 3, you'll learn about some advanced Git concepts. You'll learn about tags, which are used to mark specific points in your code history. You'll also learn about rebasing and merging, which are two ways to change the history of your code.
 
 [Introduction to Git and GitHub]:https://www.coursera.org/learn/introduction-git-github/home/week/1
+
+# The Ultimate Git Course
+
+Welcome to **The Ultimate Git Course**! This comprehensive course will take you from a beginner to a proficient user of Git, the industry-standard version control system. Whether you're a developer, designer, or any other professional working with code or files, mastering Git is essential for efficient collaboration and project management.
+
+## Course Overview
+
+This course is designed to provide a hands-on learning experience, with practical examples and exercises to reinforce your understanding. You'll be guided by our experienced instructor, Mosh Hamedani, who has a passion for teaching and a wealth of expertise in software development.
+
+Throughout the course, you will learn the following topics:
+
+1. Introduction to Version Control
+   - Understanding the need for version control
+   - Git's advantages and key concepts
+
+2. Setting Up Git
+   - Installing Git on different platforms (Windows, macOS, Linux)
+   - Configuring Git with your user information
+
+3. Git Basics
+   - Creating a new Git repository
+   - Staging and committing changes
+   - Understanding the Git workflow
+
+4. Branching and Merging
+   - Creating branches for new features or bug fixes
+   - Merging branches back to the main branch
+
+5. Collaborating with Git
+   - Working with remote repositories
+   - Pushing and pulling changes from remote branches
+   - Resolving merge conflicts
+
+6. Advanced Git Techniques
+   - Managing tags and releases
+   - Using Git rebase
+   - Stashing changes for later use
+
+7. Best Practices and Tips
+   - Git workflows and strategies
+   - Handling large repositories
+   - Troubleshooting common issues
+
+## Prerequisites
+
+To make the most of this course, you should have a basic understanding of command-line interfaces and programming concepts. Familiarity with any programming language will be beneficial, but it's not mandatory.
+
+## Getting Started
+
+1. Clone this repository to your local machine.
+2. Install Git following the instructions in the course materials.
+3. Explore the course materials, exercises, and examples provided.
+
+## Course Resources
+
+- Course materials and exercises can be found in this repository.
+- Join our community forum to connect with other learners and get help when needed.
+
+## Certification
+
+Upon completing the course, you'll receive a certificate of completion to showcase your newfound Git skills.
