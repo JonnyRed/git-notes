@@ -11,21 +11,22 @@
 
 |Change Configuration|Command|
 |--------------------|-------|
-|Sets up Git with your name|git config --global user.name "John Reynolds"|
-|Sets up Git with your email|git config --global user.email "jjmreynolds@gmail.com"|
-|Makes sure that Git output is colored|git config --global color.ui auto|
-|Displays the original state in a conflict|git config --global merge.conflictstyle diff3|
-|Display configuration options|git config --list|
+|Sets up Git with your name|```git config --global user.name "John Reynolds"```|
+|Sets up Git with your email|```git config --global user.email "jjmreynolds@gmail.com"```|
+|Makes sure that Git output is colored|```git config --global color.ui auto```|
+|Displays the original state in a conflict|```git config --global merge.conflictstyle diff3```|
+|Display configuration options|```git config --list```|
+|Edit Global Settings|```git config --global -e```|
 
 ## Bash commands
 
 |Description of Command|Command|
 |--------------------|-------|
-|Used to list files and directories|ls|
-|Used to create a new directory|mkdir|
-|Used to change directories|cd|
-|Used to remove files and directories|rm|
-|Used print current directory|pwd|
+|Used to list files and directories|```ls```|
+|Used to create a new directory|```mkdir```|
+|Used to change directories|```cd```|
+|Used to remove files and directories|```rm```|
+|Used print current directory|```pwd```|
 
 ## git version
 
