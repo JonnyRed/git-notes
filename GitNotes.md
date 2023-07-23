@@ -92,14 +92,16 @@ git add .
 ```
 
 * Takes a space-separated list of file names
-* Alternatively, the period . can be used in place of a list of files to tell Git to add the current directory (and all nested files)
+* Alternatively, the period . can be used in place of a list of files
+to tell Git to add the current directory (and all nested files)
 * `git reset`remove every thing from staging
 * `git reset HEAD -- <file>` remove single file
 
 
 ## Git Commit
 
-The ```git commit``` command takes files from the Staging Index and saves them in the repository.
+The ```git commit``` command takes files from the Staging Index and
+saves them in the repository.
 
 * Will open the code editor that is specified in your configuration
 
@@ -148,14 +150,16 @@ the changes, and include any relevant details.
 It's worth mentioning that different projects and teams may have their
 own conventions for commit messages. The above structure is a commonly
 used format, but it's not a strict requirement.
-It's important to follow the conventions established within your project or team for consistency and clarity.
+It's important to follow the conventions established within your project
+or team for consistency and clarity.
 
 [Git Udacity's Commit Style](https://udacity.github.io/git-styleguide/)
 
 
 ## Git Diff
 
-The ```git diff``` command can be used to see changes that have been made but haven't been committed, yet.
+The ```git diff``` command can be used to see changes that have been
+made but haven't been committed, yet.
 
 * The files that have been modified
 * The location of the lines that have been added/removed
@@ -166,7 +170,9 @@ The ```git diff``` command can be used to see changes that have been made but ha
 
 ## .gitignore
 
-To recap, the .gitignore file is used to tell Git about the files that Git should not track. This file should be placed in the same directory that the .git directory is in.
+To recap, the .gitignore file is used to tell Git about the files that
+Git should not track. This file should be placed in the same directory
+that the .git directory is in.
 
 
 * [Ignoring files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
@@ -184,9 +190,12 @@ git tag -a v1.0
 git tag -a v1.4 -m "my version 1.4"
 ```
 
-__In the command above (git tag -a v1.0) the -a flag is used. This flag tells Git to create an annotated flag. If you don't provide the flag (i.e. git tag v1.0) then it'll create what's called a lightweight tag.__
+__In the command above (git tag -a v1.0) the -a flag is used. This
+flag tells Git to create an annotated flag. If you don't provide
+the flag (i.e. git tag v1.0) then it'll create what's called a lightweight tag.__
 
-___Annotated tags are recommended because they include a lot of extra information such as:___
+___Annotated tags are recommended because they include a lot of extra
+information such as:___
 
 * The person who made the tag
 * The date the tag was made
@@ -197,17 +206,25 @@ __Always use annotated tags.__
 
 __Verify Tag__
 
-After saving and quitting the editor, nothing is displayed on the command line. So how do we know that a tag was actually added to the project? If you type out just ```git tag```, it will display all tags that are in the repository.
+After saving and quitting the editor, nothing is displayed on the
+command line. So how do we know that a tag was actually added to the
+project? If you type out just ```git tag```, it will display all tags
+that are in the repository.
 
 __Git Log's --decorate Flag__
 
-As you've learned, git log is a pretty powerful tool for letting us check out a repository's commits. We've already looked at a couple of its flags, but it's time to add a new one to our tool belt. The --decorate flag will show us some details that are hidden from the default view.
+As you've learned, git log is a pretty powerful tool for letting us
+check out a repository's commits. We've already looked at a couple of
+its flags, but it's time to add a new one to our tool belt.
+The --decorate flag will show us some details that are hidden from
+the default view.
 
 ```git log --decorate ```
 
 __Deleting A Tag__
 
-A Git tag can be deleted with the ```-d``` flag (for delete!) and the name of the tag:
+A Git tag can be deleted with the ```-d``` flag (for delete!) and the
+name of the tag:
 
 
 ```bash
@@ -217,7 +234,9 @@ git tag -d v1.0
 
 
 __Push all tags to server__
-If you have a lot of tags that you want to push up at once, you can also use the --tags option to the git push command. This will transfer all of your tags to the remote server that are not already there.
+If you have a lot of tags that you want to push up at once, you can
+also use the --tags option to the git push command. This will transfer
+all of your tags to the remote server that are not already there.
 
 ```bash
 git push --tags
@@ -244,7 +263,9 @@ git tag -a v1.0 a87984
 
 ## Git Branch
 
-A Git branch is used to separate work. This tactic is commonly used when new features are in development but need to be kept distinct until ready for general release.
+A Git branch is used to separate work. This tactic is commonly used
+when new features are in development but need to be kept distinct until
+ready for general release.
 
 Can be used to:
 * List all branch names in the repository
@@ -278,7 +299,8 @@ Running this command will:
 
 * Remove all files and directories from the Working Directory that Git is tracking
     * files that Git tracks are stored in the repository, so nothing is lost
-* Go into the repository and pull out all of the files and directories of the commit that the branch points to
+* Go into the repository and pull out all of the files and directories
+of the commit that the branch points to
 
 __Branches In The Log__
 
@@ -286,7 +308,8 @@ __Branches In The Log__
 
 ### Restore a file
 
-To restore it to its former glory, use git checkout from the last known commit, which is HEAD:
+To restore it to its former glory, use git checkout from the last known
+commit, which is HEAD:
 
 ```git checkout HEAD filename```
 
@@ -349,13 +372,18 @@ git merge --abort
 
 When a merge happens, Git will:
 * Look at the branches that it's going to merge
-* Look back along the branch's history to find a single commit that both branches have in their commit history
-* Combine the lines of code that were changed on the separate branches together makes a commit to record the merge
+* Look back along the branch's history to find a single commit that
+both branches have in their commit history
+* Combine the lines of code that were changed on the separate branches
+together makes a commit to record the merge
 
-__When we merge, we're merging some other branch into the current (checked-out) branch. We're not merging two branches into a new branch. We're not merging the current branch into the other branch.__
+__When we merge, we're merging some other branch into the current
+(checked-out) branch. We're not merging two branches into a new branch.
+We're not merging the current branch into the other branch.__
 
 ----
-* It's very important to know which branch you're on when you're about to merge branches together.
+* It's very important to know which branch you're on when you're about
+to merge branches together.
     * Remember that making a merge makes a commit.
 
 If you make a merge on the wrong branch, use this command to undo the merge:
@@ -376,8 +404,10 @@ git merge <other-branch>
 
 There are two types of merges:
 
-* Fast-forward merge – the branch being merged in must be ahead of the checked out branch.
-    * The checked out branch's pointer will just be moved forward to point to the same commit as the other branch.
+* Fast-forward merge – the branch being merged in must be ahead of the
+checked out branch.
+    * The checked out branch's pointer will just be moved forward to
+    point to the same commit as the other branch.
 * The regular type of merge
     * two divergent branches are combined
     * a merge commit is created
@@ -393,15 +423,21 @@ There are two types of merges:
 
 __Merge Conflict__
 
-A merge conflict will happen when the exact same line(s) are changed in separate branches
+A merge conflict will happen when the exact same line(s) are changed
+in separate branches
 
-A merge conflict happens when the same line or lines have been changed on different branches that are being merged. Git will pause mid-merge telling you that there is a conflict and will tell you in what file or files the conflict occurred. To resolve the conflict in a file:
+A merge conflict happens when the same line or lines have been changed
+on different branches that are being merged. Git will pause mid-merge
+telling you that there is a conflict and will tell you in what file or
+files the conflict occurred. To resolve the conflict in a file:
 * Locate and remove all lines with merge conflict indicators
 * Determine what to keep
 * Save the file(s)
 * Stage the file(s)
 * Make a commit
-Be careful that a file might have merge conflicts in multiple parts of the file, so make sure you check the entire file for merge conflict indicators - a quick search for <<< should help you locate all of them.
+Be careful that a file might have merge conflicts in multiple parts
+of the file, so make sure you check the entire file for merge conflict
+indicators - a quick search for <<< should help you locate all of them.
 
 
 
@@ -419,16 +455,31 @@ $ git commit --amend
 If your Working Directory is clean  then running ```git commit --amend``` will let you provide a new commit message. Your code editor will open up and display the original commit message. Just fix a misspelling or completely reword it! Then save it and close the editor to lock in the new commit message.
 
 ## Add Forgotten Files To Commit
-Alternatively, ```git commit --amend``` will let you include files (or changes to files) you might've forgotten to include. Let's say you've updated the color of all navigation links across your entire website. You committed that change and thought you were done. But then you discovered that a special nav link buried deep on a page doesn't have the new color. You could just make a new commit that updates the color for that one link, but that would have two back-to-back commits that do practically the exact same thing (change link colors).
+Alternatively, ```git commit --amend``` will let you include files
+(or changes to files) you might've forgotten to include. Let's say
+you've updated the color of all navigation links across your entire
+website. You committed that change and thought you were done.
+But then you discovered that a special nav link buried deep on a
+page doesn't have the new color. You could just make a new commit that
+updates the color for that one link, but that would have two
+back-to-back commits that do practically the exact
+same thing (change link colors).
 
-Instead, you can amend the last commit (the one that updated the color of all of the other links) to include this forgotten one. To do get the forgotten link included, just:
+Instead, you can amend the last commit (the one that updated the color
+of all of the other links) to include this forgotten one.
+To do get the forgotten link included, just:
 
 * Edit the file(s)
 * Save the file(s)
 * Stage the file(s)
 * run ```git commit --amend```
 
-So you'd make changes to the necessary CSS and/or HTML files to get the forgotten link styled correctly, then you'd save all of the files that were modified, then you'd use git add to stage all of the modified files (just as if you were going to make a new commit!), but then you'd run ```git commit --amend``` to update the most-recent commit instead of creating a new one.
+So you'd make changes to the necessary CSS and/or HTML files to get the
+forgotten link styled correctly, then you'd save all of the files that
+were modified, then you'd use git add to stage all of the modified files
+(just as if you were going to make a new commit!), but then you'd run
+```git commit --amend``` to update the most-recent commit instead of
+creating a new one.
 
 ## Undo local changes
 
@@ -476,13 +527,22 @@ This command:
 
 
 ## Reset vs Revert
-At first glance, resetting might seem coincidentally close to reverting, but they are actually quite different. Reverting creates a new commit that reverts or undoes a previous commit. Resetting, on the other hand, erases commits!
+At first glance, resetting might seem coincidentally close to reverting,
+ but they are actually quite different. Reverting creates a new commit
+ that reverts or undoes a previous commit. Resetting, on the other hand,
+ erases commits!
 
 ⚠️ __Resetting Is Dangerous__ ⚠️
 
-_You've got to be careful with Git's resetting capabilities. This is one of the few commands that lets you erase commits from the repository. If a commit is no longer in the repository, then its content is gone._
+_You've got to be careful with Git's resetting capabilities.
+This is one of the few commands that lets you erase commits from the
+repository. If a commit is no longer in the repository,
+then its content is gone._
 
-_To alleviate the stress a bit, **Git does keep track of everything for about 30 days** before it completely erases anything. To access this content, you'll need to use the ```git reflog``` command. Check out these links for more info:
+_To alleviate the stress a bit, **Git does keep track of everything
+for about 30 days** before it completely erases anything. To access
+this content, you'll need to use the ```git reflog``` command.
+Check out these links for more info:
 
 * [git-reflog](https://git-scm.com/docs/git-reflog)
 * [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history)
@@ -499,7 +559,9 @@ git remote -v
 
 [Create repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
 
-The preferred method of starting a repository is to create the github repository in github and then clone it locally. it's best to generate the .ignore in the github repository it does give you that option.
+The preferred method of starting a repository is to create the github
+repository in github and then clone it locally. it's best to generate
+the .ignore in the github repository it does give you that option.
 
 
 ## Adding an existing project to GitHub
