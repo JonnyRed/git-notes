@@ -7,6 +7,38 @@
 
 [The entire Pro Git book](https://git-scm.com/book/en/v2)
 
+## Terms
+
+In Git, the __working tree__,  also known as the __working directory__
+or __working copy__ refers to the directory on your local machine where
+you  have cloned or checked out a Git repository. It is the place where you
+can see and modify the actual files that make up the project.
+
+When you clone a Git repository or switch to a specific branch,
+Git creates a working tree that contains a snapshot of the project's
+files and directories as they exist in that particular state of the
+repository. These files are the ones you can edit, add, or delete
+to make changes to your project.
+
+The __working tree__ is separate from the Git repository itself, which is
+located in the hidden `.git` directory at the root of the project.
+The `.git` directory stores all the necessary information about the
+project's history, branches, commits, and configuration.
+
+The typical Git workflow involves making changes to the files in
+the __working tree__, and once you're satisfied with the modifications,
+you __stage__ the changes and create a commit. The commit permanently
+records the changes you made to the repository's history.
+
+It's important to note that the __working tree__ is distinct from the
+__staging area__ (also known as the __index__). The staging area is
+where you prepare changes to be committed. After staging changes,
+you can review them and ensure they are accurate before creating a commit.
+
+To summarize, the __working tree__ in Git is the area on your local machine
+where you can interact with the actual project files and make changes
+before committing them to the repository's history.
+
 ## Git Configuration
 
 |Change Configuration|Command|
@@ -83,6 +115,138 @@ git log --oneline --decorate --graph --all
 
 __Always run Git Status__
 
+```
+git status
+```
+
+### git status -s
+
+
+```
+git status -s
+```
+
+The `git status -s` command is a short and concise way to view the
+status of your Git repository in a simplified and easy-to-read format.
+It provides a summary of the changes between the current state of your repository's __working tree__ and the __staging area__.
+
+When you run `git status -s`, you will see output that looks like this:
+
+```
+ M file1.txt
+MM file2.txt
+A  file3.txt
+?? new_file.txt
+```
+
+The status output is organized into columns:
+
+1. The __first column__ represents the status of the __staging area__.
+2. The __second column__ represents the status of the __working tree__.
+
+Here's the meaning of the possible status codes:
+
+- `??`: Untracked files - Files that are present in the working tree
+but not yet tracked by Git (not added to the staging area).
+
+- `A`: New file addition - A new file has been added to the staging area.
+
+- `M`: File modification - A file has been modified in the working tree,
+and the changes are staged and ready to be committed.
+
+- `D`: File deletion - A file has been deleted in the working tree,
+and the deletion is staged and ready to be committed.
+
+- `R`: File rename - A file has been renamed in the working tree,
+and the rename is staged and ready to be committed.
+
+- `C`: File copy - A file has been copied in the working tree,
+and the copy is staged and ready to be committed.
+
+- `U`: Conflict - A merge conflict exists in the file between the branch
+you are on and the branch you are merging or rebasing.
+
+The absence of any letter in the first column indicates that the file's
+status in the staging area has not changed since the last commit.
+
+The absence of any letter in the second column indicates that the file's status in the working tree has not changed since the last commit.
+
+## Staging area files
+
+```
+git ls-files
+
+```
+
+## git ls-tree
+
+The `git ls-tree` command is used to display the content of a specific
+Git tree object. In Git, a tree object represents a directory or a
+subdirectory within the repository, and it stores references to other
+tree objects or blob objects (files) along with their associated metadata.
+
+The basic syntax of the `git ls-tree` command is as follows:
+
+```bash
+git ls-tree [<commit>] [<path>]
+```
+
+- `<commit>`: Optional. The commit hash or reference to the commit that
+contains the tree object you want to list. If not specified, it
+defaults to the current commit (HEAD).
+
+- `<path>`: Optional. The path to a specific subdirectory or file
+within the tree object. If provided, the command will display the
+contents of the tree at the specified path. If omitted, it shows the
+entire tree object.
+
+Let's explore some examples:
+
+1. To list the contents of the current tree (current commit):
+
+```bash
+git ls-tree HEAD
+```
+
+2. To list the contents of a tree in a specific commit:
+
+```bash
+git ls-tree <commit-hash>
+```
+
+3. To list the contents of a subdirectory within a tree:
+
+```bash
+git ls-tree HEAD path/to/subdirectory
+```
+
+The output of the `git ls-tree` command displays information about
+each entry in the tree. The format of the output is:
+
+```
+<mode> <type> <object>	<file/path>
+```
+
+- `<mode>`: The file mode of the entry, which represents the
+permissions and object type
+(e.g., 100644 for a regular file, 040000 for a subdirectory).
+
+- `<type>`: The type of the entry, which can be "blob" for a file
+or "tree" for a subdirectory.
+
+- `<object>`: The SHA-1 hash of the object (either blob or tree)
+associated with the entry.
+
+- `<file/path>`: The relative path to the file or subdirectory
+within the tree.
+
+The `git ls-tree` command is particularly useful for inspecting the
+contents of a tree object in Git, such as when you need to verify
+the files and directories present in a specific commit or tree.
+It is often used in combination with other Git commands to examine
+the repository's history and track changes to files and directories
+over time.
+
 ## Git Add
 
 The git add command is used to move files from the Working Directory to the Staging Index.
@@ -98,6 +262,82 @@ to tell Git to add the current directory (and all nested files)
 * `git reset`remove every thing from staging
 * `git reset HEAD -- <file>` remove single file
 
+
+## Git show
+
+The `git show` command is used to display information about a specific
+Git object, such as a commit, tag, or tree. It provides a detailed view
+of the changes introduced by the specified object and presents
+information about the object's metadata.
+
+The basic syntax of the `git show` command is as follows:
+
+```bash
+git show [<object>]
+```
+
+- `<object>`: The object you want to show. It can be a commit hash,
+tag name, branch name, or any other valid Git object reference.
+
+Here are some common uses of the `git show` command:
+
+1. **Show commit information:**
+   To view the details of a specific commit, you can use its commit hash:
+
+   ```bash
+   git show <commit-hash>
+   ```
+
+   This will display information about the commit, including the
+   author, committer, commit date, and commit message. Additionally,
+   it shows the changes introduced by that commit, displaying the diff
+   of the changes for each file modified in the commit.
+
+2. **Show tag information:**
+   To view the details of a specific tag, you can use the tag name:
+
+   ```bash
+   git show <tag-name>
+   ```
+
+   This will display information about the tag, such as the tagger's
+   name, tag date, and the commit associated with the tag.
+   It also shows the changes introduced by the commit that the
+   tag points to.
+
+3. **Show tree information:**
+   To view the contents of a specific tree object, you can use its
+   tree hash:
+
+   ```bash
+   git show <tree-hash>
+   ```
+
+   This will display the details of the tree object, including the
+   mode, type (tree or blob), and the SHA-1 hash of each entry
+   (file or subdirectory) within the tree.
+
+4. **Show annotated tag information:**
+   To view the details of an annotated tag (a tag with additional
+   metadata like a message), you can use the tag name with the `-s` option:
+
+   ```bash
+   git show -s <tag-name>
+   ```
+
+   This will show the tagger's name, email, tag date, and the
+   annotation message associated with the tag.
+
+The `git show` command is a powerful tool for inspecting and
+understanding Git objects and their changes. It is particularly useful
+for reviewing commit history, examining specific changes introduced
+by commits or tags, and understanding the content of tree objects in
+the repository.
+
+## Git Staged Files
+List files in the staging area
+
+```git ls-files```
 
 ## Git Commit
 
@@ -157,6 +397,22 @@ or team for consistency and clarity.
 [Git Udacity's Commit Style](https://udacity.github.io/git-styleguide/)
 
 
+## Git Difftool
+
+Will use ```Winmerge```
+
+To see the changes between the staging area and the working tree
+for all modified files:
+
+```git diff```
+
+If you have already staged some changes and want to see what you've
+staged so far, you can:
+
+```
+git diff --staged
+```
+
 ## Git Diff
 
 The ```git diff``` command can be used to see changes that have been
@@ -176,6 +432,7 @@ Git should not track. This file should be placed in the same directory
 that the .git directory is in.
 
 
+* [GitHub ignore files](https://github.com/github/gitignore)
 * [Ignoring files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
 * [gitignore](https://git-scm.com/docs/gitignore#_pattern_format)
 * [Ignoring files](https://help.github.com/articles/ignoring-files/)
@@ -309,18 +566,66 @@ __Branches In The Log__
 
 ### Restore a file
 
-To restore it to its former glory, use git checkout from the last known
-commit, which is HEAD:
+The `git restore` command is used to restore files in your working tree
+to a previous state. It allows you to undo changes made to files,
+revert modifications, or even discard uncommitted changes and restore
+them to the state they were in at a specific commit or in the
+staging area.
 
-```git checkout HEAD filename```
+The basic syntax of the `git restore` command is as follows:
 
-To omit from the commit use
+```bash
+git restore <file-path>
+```
 
-```git restore --staged path/to/unwanted_file```
+This will restore the specified file in the working tree to the version
+found in the __staging area__. Any changes made to the file since the
+last `git add` (staging) will be discarded.
 
-Restore older file
+You can also use `git restore` with additional options to restore files
+from different sources:
 
-```git checkout 55df4c2 filename```
+1. **Restore a file to a specific commit:**
+
+   ```bash
+   git restore --source=<commit> <file-path>
+   ```
+
+   This command restores the specified file to the version found in the
+   given commit. The changes made to the file since that commit will
+   be discarded.
+
+2. **Restore a file to a specific branch or commit reference:**
+
+   ```bash
+   git restore --source=<branch/commit> --staged <file-path>
+   ```
+
+   This command restores the specified file to the version found in
+   the specified branch or commit. The restored version will be added
+   to the staging area, allowing you to create a new commit with
+   the restored changes.
+
+3. **Restore all files in the working tree to a specific commit:**
+
+   ```bash
+   git restore --source=<commit> .
+   ```
+
+   This command restores all files in the working tree to the versions
+   found in the given commit. This effectively reverts the entire
+   working tree to the state it was in at that commit.
+
+It's important to note that `git restore` is used to work with files in
+the __working tree__ and the __staging area____. It does not affect
+commits in the repository's history. If you want to undo a commit and
+remove it from the history, you should use commands like
+`git reset`, `git revert`, or `git cherry-pick`.
+
+Be cautious when using `git restore`, especially with the `--source`
+option, as it discards changes in the working tree and cannot be undone.
+It is recommended to create a backup or use Git's branching and tagging
+features before performing any major restoration actions.
 
 ## Delete A Branch
 
