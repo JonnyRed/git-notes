@@ -7,6 +7,10 @@
 
 [The entire Pro Git book](https://git-scm.com/book/en/v2)
 
+## Git Glossary
+
+__The [Git Glossary](https://git-scm.com/docs/gitglossary/en)__ is very useful
+
 ## Terms
 
 In Git, the __working tree__,  also known as the __working directory__
@@ -110,6 +114,7 @@ git log --graph --oneline
 git log --oneline --decorate --graph --all
 ```
 
+The `git log --stat --oneline` command provides a concise and summarized view of the commit history in a Git repository. It displays each commit as a one-liner along with a summary of the changes introduced by that commit.
 
 ## Git Status
 
@@ -171,7 +176,7 @@ status in the staging area has not changed since the last commit.
 
 The absence of any letter in the second column indicates that the file's status in the working tree has not changed since the last commit.
 
-## Staging area files
+##  git ls-files
 
 ```
 git ls-files
@@ -263,7 +268,7 @@ to tell Git to add the current directory (and all nested files)
 * `git reset HEAD -- <file>` remove single file
 
 
-## Git show
+## Git Show
 
 The `git show` command is used to display information about a specific
 Git object, such as a commit, tag, or tree. It provides a detailed view
@@ -421,6 +426,14 @@ made but haven't been committed, yet.
 * The files that have been modified
 * The location of the lines that have been added/removed
 * The actual changes that have been made
+
+Various ways to check your working tree
+
+|command|effect|
+|-------|------|
+|`git diff`|Changes in the working tree not yet staged for the next commit|
+|`git diff --cached`|Changes between the index and your last commit; what you would be committing if you run git commit without -a option|
+|`git diff HEAD`|Changes in the working tree since your last commit; what you would be committing if you run git commit -a|
 
 [git diff](https://git-scm.com/docs/git-diff)
 
@@ -790,6 +803,7 @@ creating a new one.
 ## Undo local changes
 
 [Undo Possibilities][]
+
 * When you make a change, but have not yet staged it, you can undo your
 work.
 1. Confirm that the file is unstaged by running ```git status```
@@ -797,8 +811,11 @@ work.
     * overwrite local changes ```git checkout -- <file>```
     * To save local changes so you can reuse them later ```git stash```
     * To discard local changes to all files, permanently ```git reset --hard```
+
 ## Undo staged local changes
+
 [Undo Possibilities][]
+
 * If you added a file to staging, you can undo it.
 1. Confirm that the file is staged (that you used git add <file>) by
 running ```git status```
