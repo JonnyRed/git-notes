@@ -357,6 +357,46 @@ for reviewing commit history, examining specific changes introduced
 by commits or tags, and understanding the content of tree objects in
 the repository.
 
+## Git Stash
+the stash command is used to temporarily store changes that are not
+ready to be committed. It allows you to save your work in progress,
+such as modifications to tracked files and staged changes, without
+creating a commit. The changes are saved in a "stash," which is a
+stack-like storage area where you can push and pop changes.
+
+The basic usage of the git stash command is as follows:
+```
+git stash
+```
+
+By running this command, Git will save the modifications in the
+working tree and staging area (if any) to a new stash entry.
+The working directory will then be reverted to the state of the last
+commit, effectively cleaning up any uncommitted changes.
+
+The git stash command is handy in several scenarios:
+
+1. Temporary context switch: When you need to switch to a different
+branch to work on something else but don't want to commit the
+unfinished work, you can stash the changes and then switch branches.
+1. Pulling changes: Before pulling changes from a remote repository,
+you can stash your local changes to avoid conflicts.
+1. Experimenting: If you want to experiment with different changes in
+your working tree without committing them yet, you can stash the
+current changes and apply them later if needed.
+
+Once you have stashed your changes, you can use other stash-related
+commands to manage your stash entries:
+
+* git stash list: Displays a list of all stash entries.
+* git stash apply: Applies the most recent stash entry
+(top of the stash stack) to your working tree and staging area without
+removing it from the stash.
+* git stash pop: Applies the most recent stash entry and removes it
+from the stash stack.
+* git stash drop: Removes a specific stash entry from the stash stack.
+* git stash clear: Removes all stash entries from the stash stack.
+
 ## Git Staged Files
 List files in the staging area
 
