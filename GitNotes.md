@@ -174,14 +174,32 @@ you are on and the branch you are merging or rebasing.
 The absence of any letter in the first column indicates that the file's
 status in the staging area has not changed since the last commit.
 
-The absence of any letter in the second column indicates that the file's status in the working tree has not changed since the last commit.
+The absence of any letter in the second column indicates that the file's
+status in the working tree has not changed since the last commit.
 
 ##  git ls-files
+
+The git ls-files command lists the files that are tracked by Git.
+This includes files that are in the index, as well as files that are
+in the working tree but not in the index.
 
 ```
 git ls-files
 
 ```
+
+Here are some of the most commonly used options for git ls-files:
+
+|Option|Effect|
+|------|------|
+|-c | Show the file mode.|
+|-z | Show the filenames verbatim.|
+|-i | Show only ignored files.|
+|--stage | Show the stage information for each file.|
+|--unmerged | Show unmerged files.|
+|--deleted | Show deleted files.|
+|--others | Show files that are not tracked by Git.|
+
 
 ## git ls-tree
 
@@ -577,7 +595,7 @@ __Branches In The Log__
 
 ```git log --oneline --decorate```
 
-### Restore a file
+## Restore a file
 
 The `git restore` command is used to restore files in your working tree
 to a previous state. It allows you to undo changes made to files,
@@ -738,6 +756,7 @@ checked out branch.
 
 [Refer to Coursera Video]:./videos/merge.mp4
 [merge conflicts]:./videos/merge_conflicts.mp4
+
 ----
 
 __Merge Conflict__
