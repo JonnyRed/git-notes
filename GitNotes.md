@@ -98,7 +98,13 @@ will create the new repository inside of the current working directory
 
 ## git remote repository
 
+Repository reference
+
 `git remote -v`
+
+## Remove repository reference
+
+`git remote rm origin`
 
 ## Git Log
 
