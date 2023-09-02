@@ -95,6 +95,18 @@ will create the new repository inside of the current working directory
 * [git clone docs](https://git-scm.com/docs/git-clone)
 * [git clone Tutorial](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 
+## .gitignore
+
+To recap, the .gitignore file is used to tell Git about the files that
+Git should not track. This file should be placed in the same directory
+that the .git directory is in.
+
+
+* [GitHub ignore files](https://github.com/github/gitignore)
+* [Ignoring files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
+* [gitignore](https://git-scm.com/docs/gitignore#_pattern_format)
+* [Ignoring files](https://help.github.com/articles/ignoring-files/)
+* [gitignore.io](https://www.gitignore.io/)
 
 ## git remote repository
 
@@ -501,19 +513,6 @@ Various ways to check your working tree
 
 [git diff](https://git-scm.com/docs/git-diff)
 
-
-## .gitignore
-
-To recap, the .gitignore file is used to tell Git about the files that
-Git should not track. This file should be placed in the same directory
-that the .git directory is in.
-
-
-* [GitHub ignore files](https://github.com/github/gitignore)
-* [Ignoring files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
-* [gitignore](https://git-scm.com/docs/gitignore#_pattern_format)
-* [Ignoring files](https://help.github.com/articles/ignoring-files/)
-* [gitignore.io](https://www.gitignore.io/)
 
 
 ## Git Tag
