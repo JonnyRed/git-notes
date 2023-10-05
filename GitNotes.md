@@ -508,8 +508,8 @@ Various ways to check your working tree
 |command|effect|
 |-------|------|
 |`git diff`|Changes in the working tree not yet staged for the next commit|
-|`git diff --cached`|Changes between the index and your last commit; what you would be committing if you run git commit without -a option|
-|`git diff HEAD`|Changes in the working tree since your last commit; what you would be committing if you run git commit -a|
+|`git diff --cached`|Changes between the index and your last  commit;<br>what you would be committing if you run git commit <br>without -a option|
+|`git diff HEAD`|Changes in the working tree since your last commit;<br> what you would be committing if you run git commit -a|
 
 [git diff](https://git-scm.com/docs/git-diff)
 
