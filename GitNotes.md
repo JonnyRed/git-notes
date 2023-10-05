@@ -123,6 +123,8 @@ Repository reference
 abbreviated stats for each commit
 
 ```bash
+git log --oneline             # One line summary of commits   
+git log --oneline  --reverse  # Reversed ne line summary of commits   
 git log --patch -2
 git log --stat
 git log --pretty=oneline
@@ -132,7 +134,10 @@ git log --graph --oneline
 git log --oneline --decorate --graph --all
 ```
 
-The `git log --stat --oneline` command provides a concise and summarized view of the commit history in a Git repository. It displays each commit as a one-liner along with a summary of the changes introduced by that commit.
+The `git log --stat --oneline` command provides a concise and summarized 
+view of the commit history in a Git repository. It displays each commit 
+as a one-liner along with a summary of the changes introduced by that 
+commit.
 
 ## Git Status
 
