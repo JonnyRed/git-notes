@@ -467,5 +467,31 @@ option, as it discards changes in the working tree and cannot be undone.
 It is recommended to create a backup or use Git's branching and tagging
 features before performing any major restoration actions.
 
+## Git `clean`
+
+The `git clean` command is used to remove untracked files and directories from the working tree¹. Untracked files are files that have been created within your repo's working directory but have not yet been added to the repository's tracking index using the `git add` command⁴. 
+
+Here are some common options for `git clean`:
+
+- `-n`: This option performs a “dry run” of `git clean`. It shows you which files are going to be removed without actually removing them¹⁴.
+- `-f`: This option forces the deletion of untracked files¹.
+- `-d`: This option removes untracked directories¹.
+- `-x`: This option removes ignored files¹³.
+- `-i`: This option allows you to do an interactive clean¹.
+
+For example, if you want to see which files will be removed without actually removing them, you can use the `-n` option like this: `git clean -n`⁴.
+
+Please note that when fully executed, `git clean` will make a hard filesystem deletion, similar to executing the command line `rm` utility. Make sure you really want to delete the untracked files before you run it⁴.
+
+I hope this helps! Let me know if you have any other questions.
+
+Source: Conversation with Bing, 07/10/2023
+(1) Git - Clean - GeeksforGeeks. https://www.geeksforgeeks.org/git-clean/.
+(2) Git Clean | Atlassian Git Tutorial. https://www.atlassian.com/git/tutorials/undoing-changes/git-clean.
+(3) Git - git-clean Documentation. https://git-scm.com/docs/git-clean.
+(4) . https://bing.com/search?q=git+clean+command+explanation.
+(5) Git - git-clean Documentation. https://git-scm.com/docs/git-clean/2.3.10.
+(6) undefined. https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git.
+(7) undefined. https://marketsplash.com/tutorials/git/git-clean/.
 [Git code with Mosh]: https://codewithmosh.com/p/the-ultimate-git-course
 
