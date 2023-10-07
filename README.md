@@ -64,22 +64,44 @@ Please note that these are personal notes, so they reflect my own experiences an
 ## Introduction to Git and GitHub
 
 
-[Introduction to Git and GitHub] teaches you the basics of Git, a version control system, and GitHub, a web-based hosting service for Git repositories. The course covers topics such as creating and cloning repositories, working with branches, and resolving conflicts. It also includes hands-on labs that allow you to practice what you've learned.
+[Introduction to Git and GitHub][] teaches you the basics of Git, 
+a version control system, and GitHub, a web-based hosting service for 
+Git repositories. The course covers topics such as creating and cloning 
+repositories, working with branches, and resolving conflicts. 
+It also includes hands-on labs that allow you to practice what 
+you've learned.
 
 The course is divided into three weeks.
-* Week 1, you'll learn about the basics of Git and GitHub. You'll create your first repository and clone it onto your computer. You'll also learn about branches and how to use them to track changes to your code.
-* Week 2, you'll learn more about working with branches. You'll learn how to merge branches and how to resolve conflicts. You'll also learn about remote repositories and how to push and pull changes from them.
-* Week 3, you'll learn about some advanced Git concepts. You'll learn about tags, which are used to mark specific points in your code history. You'll also learn about rebasing and merging, which are two ways to change the history of your code.
+* Week 1, you'll learn about the basics of Git and GitHub. You'll create
+your first repository and clone it onto your computer. 
+You'll also learn about branches and how to use them to track changes 
+to your code.
+* Week 2, you'll learn more about working with branches. You'll learn 
+how to merge branches and how to resolve conflicts. 
+You'll also learn about remote repositories and how to push and pull 
+changes from them.
+* Week 3, you'll learn about some advanced Git concepts. You'll learn 
+about tags, which are used to mark specific points in your code history. 
+You'll also learn about rebasing and merging, which are two ways to 
+change the history of your code.
 
 [Introduction to Git and GitHub]:https://www.coursera.org/learn/introduction-git-github/home/week/1
 
 # The Ultimate Git Course
 
-Welcome to **The Ultimate Git Course**! This comprehensive course will take you from a beginner to a proficient user of Git, the industry-standard version control system. Whether you're a developer, designer, or any other professional working with code or files, mastering Git is essential for efficient collaboration and project management.
+Welcome to **The Ultimate Git Course**! This comprehensive course will 
+take you from a beginner to a proficient user of Git, the industry-standard 
+version control system. Whether you're a developer, designer, or any 
+other professional working with code or files, mastering Git is essential 
+for efficient collaboration and project management.
 
 ## Course Overview
 
-This course is designed to provide a hands-on learning experience, with practical examples and exercises to reinforce your understanding. You'll be guided by our experienced instructor, Mosh Hamedani, who has a passion for teaching and a wealth of expertise in software development.
+This course is designed to provide a hands-on learning experience, 
+with practical examples and exercises to reinforce your understanding. 
+You'll be guided by our experienced instructor, 
+Mosh Hamedani, who has a passion for teaching and a wealth of expertise 
+in software development.
 
 Throughout the course, you will learn the following topics:
 
@@ -117,7 +139,9 @@ Throughout the course, you will learn the following topics:
 
 ## Prerequisites
 
-To make the most of this course, you should have a basic understanding of command-line interfaces and programming concepts. Familiarity with any programming language will be beneficial, but it's not mandatory.
+To make the most of this course, you should have a basic understanding 
+of command-line interfaces and programming concepts. Familiarity with 
+any programming language will be beneficial, but it's not mandatory.
 
 ## Getting Started
 
@@ -128,11 +152,13 @@ To make the most of this course, you should have a basic understanding of comman
 ## Course Resources
 
 - Course materials and exercises can be found in this repository.
-- Join our community forum to connect with other learners and get help when needed.
+- Join our community forum to connect with other learners and get 
+help when needed.
 
 ## Certification
 
-Upon completing the course, you'll receive a certificate of completion to showcase your newfound Git skills.
+Upon completing the course, you'll receive a certificate of completion 
+to showcase your newfound Git skills.
 
 # Git Code with Mosh
 
@@ -144,7 +170,8 @@ git status -s
 
 The `git status -s` command is a short and concise way to view the
 status of your Git repository in a simplified and easy-to-read format.
-It provides a summary of the changes between the current state of your repository's __working tree__ and the __staging area__.
+It provides a summary of the changes between the current state of your 
+repository's __working tree__ and the __staging area__.
 
 When you run `git status -s`, you will see output that looks like this:
 
@@ -187,6 +214,100 @@ status in the staging area has not changed since the last commit.
 
 The absence of any letter in the second column indicates that the file's
 status in the working tree has not changed since the last commit.
+
+## git show
+
+The `git show` command is a versatile tool in Git that is used to view 
+expanded details on Git objects such as blobs, trees, tags, and commits. 
+Here's a breakdown of what it does:
+
+- **Commits**: It shows the log message and textual diff. It also presents 
+the merge commit in a special format as produced by `git diff-tree --cc`.
+- **Tags**: It shows the tag message and the referenced objects¹.
+- **Trees**: It shows the names (equivalent to `git ls-tree` with `--name-only`).
+- **Blobs**: It shows the plain contents.
+
+The command takes options applicable to the `git diff-tree` command to 
+control how the changes the commit introduces are shown¹. By default, 
+`git-show` acts against the `HEAD` reference, which always points to 
+the last commit of the current branch. Therefore, you can use 
+`git-show` to display the log message and diff output of the latest 
+commit.
+
+There are several options you can use with `git show` to customize its 
+output, such as:
+- `--pretty[=<format>]`: Pretty-print the contents of the commit logs 
+in a given format.
+- `--abbrev-commit`: Instead of showing the full 40-byte hexadecimal 
+commit object name, show a prefix that names the object uniquely.
+- `--no-abbrev-commit`: Show the full 40-byte hexadecimal commit object name.
+- `--oneline`: This is a shorthand for `--pretty=oneline --abbrev-commit` 
+used together.
+- `--encoding=<encoding>`: Re-code the commit log message in the encoding 
+preferred by the user.
+- `--expand-tabs=<n>`, `--expand-tabs`, `--no-expand-tabs`: Perform a tab 
+expansion (replace each tab with enough spaces to fill to the next 
+display column that is multiple of `<n>`) in the log message 
+before showing it in the output.
+
+This command is quite useful when you want to examine the details of 
+specific objects in your Git repository.
+
+----
+The `git show` command is used to view detailed information about 
+Git objects, including blobs, trees, tags, and commits. 
+It is similar to the `git log` command, but it provides more detail 
+about each object.
+
+When used to view a commit, `git show` displays the following information:
+
+* The commit hash
+* The author name and email address
+* The commit date and time
+* The commit message
+* A diff of the changes introduced by the commit
+
+`git show` can also be used to view specific files within a commit,
+or to view a range of commits. For example, to view the changes to the file
+ `README.md` in the most recent commit, you would use the following command:
+
+
+```
+git show README.md
+```
+
+To view all of the commits in the `master` branch that were made by the user
+`john.doe`, you would use the following command:
+
+```
+git show master --author=john.doe
+```
+
+`git show` is a powerful tool for examining the history of a Git repository. 
+It can be used to troubleshoot problems, track down changes, and learn 
+more about how a project has evolved over time.
+
+Here are some examples of how `git show` can be used:
+
+* To find the commit that introduced a particular bug:
+
+```
+git show --before=bug-fix-commit --after=buggy-commit
+```
+
+* To track down the changes to a specific file over time:
+
+```
+git show --name-only <file-name>
+```
+
+* To see how a commit message has evolved:
+
+```
+git show --pretty=format:"%h %s" --first-parent <commit-hash>
+```
+
+`git show` is a versatile command with many uses. It is a valuable tool for any Git user.
 
 
 ##  git ls-files
@@ -282,98 +403,6 @@ It is often used in combination with other Git commands to examine
 the repository's history and track changes to files and directories
 over time.
 
-## git show
-
-The `git show` command is a versatile tool in Git that is used to view 
-expanded details on Git objects such as blobs, trees, tags, and commits. 
-Here's a breakdown of what it does:
-
-- **Commits**: It shows the log message and textual diff. It also presents 
-the merge commit in a special format as produced by `git diff-tree --cc`.
-- **Tags**: It shows the tag message and the referenced objects¹.
-- **Trees**: It shows the names (equivalent to `git ls-tree` with `--name-only`).
-- **Blobs**: It shows the plain contents.
-
-The command takes options applicable to the `git diff-tree` command to 
-control how the changes the commit introduces are shown¹. By default, 
-`git-show` acts against the `HEAD` reference, which always points to 
-the last commit of the current branch. Therefore, you can use 
-`git-show` to display the log message and diff output of the latest 
-commit.
-
-There are several options you can use with `git show` to customize its 
-output, such as:
-- `--pretty[=<format>]`: Pretty-print the contents of the commit logs 
-in a given format.
-- `--abbrev-commit`: Instead of showing the full 40-byte hexadecimal 
-commit object name, show a prefix that names the object uniquely.
-- `--no-abbrev-commit`: Show the full 40-byte hexadecimal commit object name.
-- `--oneline`: This is a shorthand for `--pretty=oneline --abbrev-commit` 
-used together.
-- `--encoding=<encoding>`: Re-code the commit log message in the encoding 
-preferred by the user.
-- `--expand-tabs=<n>`, `--expand-tabs`, `--no-expand-tabs`: Perform a tab 
-expansion (replace each tab with enough spaces to fill to the next 
-display column that is multiple of `<n>`) in the log message 
-before showing it in the output.
-
-This command is quite useful when you want to examine the details of 
-specific objects in your Git repository.
-
-----
-The `git show` command is used to view detailed information about Git objects,
-including blobs, trees, tags, and commits. It is similar to the `git log` command, but it provides more detail about each object.
-
-When used to view a commit, `git show` displays the following information:
-
-* The commit hash
-* The author name and email address
-* The commit date and time
-* The commit message
-* A diff of the changes introduced by the commit
-
-`git show` can also be used to view specific files within a commit,
-or to view a range of commits. For example, to view the changes to the file
- `README.md` in the most recent commit, you would use the following command:
-
-
-```
-git show README.md
-```
-
-To view all of the commits in the `master` branch that were made by the user
-`john.doe`, you would use the following command:
-
-```
-git show master --author=john.doe
-```
-
-`git show` is a powerful tool for examining the history of a Git repository. 
-It can be used to troubleshoot problems, track down changes, and learn 
-more about how a project has evolved over time.
-
-Here are some examples of how `git show` can be used:
-
-* To find the commit that introduced a particular bug:
-
-```
-git show --before=bug-fix-commit --after=buggy-commit
-```
-
-* To track down the changes to a specific file over time:
-
-```
-git show --name-only <file-name>
-```
-
-* To see how a commit message has evolved:
-
-```
-git show --pretty=format:"%h %s" --first-parent <commit-hash>
-```
-
-`git show` is a versatile command with many uses. It is a valuable tool for any Git user.
-
 
 ## Restore a file
 
@@ -438,5 +467,31 @@ option, as it discards changes in the working tree and cannot be undone.
 It is recommended to create a backup or use Git's branching and tagging
 features before performing any major restoration actions.
 
-[Git code with Mosh][]
+## Git `clean`
+
+The `git clean` command is used to remove untracked files and directories from the working tree¹. Untracked files are files that have been created within your repo's working directory but have not yet been added to the repository's tracking index using the `git add` command⁴. 
+
+Here are some common options for `git clean`:
+
+- `-n`: This option performs a “dry run” of `git clean`. It shows you which files are going to be removed without actually removing them¹⁴.
+- `-f`: This option forces the deletion of untracked files¹.
+- `-d`: This option removes untracked directories¹.
+- `-x`: This option removes ignored files¹³.
+- `-i`: This option allows you to do an interactive clean¹.
+
+For example, if you want to see which files will be removed without actually removing them, you can use the `-n` option like this: `git clean -n`⁴.
+
+Please note that when fully executed, `git clean` will make a hard filesystem deletion, similar to executing the command line `rm` utility. Make sure you really want to delete the untracked files before you run it⁴.
+
+I hope this helps! Let me know if you have any other questions.
+
+Source: Conversation with Bing, 07/10/2023
+(1) Git - Clean - GeeksforGeeks. https://www.geeksforgeeks.org/git-clean/.
+(2) Git Clean | Atlassian Git Tutorial. https://www.atlassian.com/git/tutorials/undoing-changes/git-clean.
+(3) Git - git-clean Documentation. https://git-scm.com/docs/git-clean.
+(4) . https://bing.com/search?q=git+clean+command+explanation.
+(5) Git - git-clean Documentation. https://git-scm.com/docs/git-clean/2.3.10.
+(6) undefined. https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git.
+(7) undefined. https://marketsplash.com/tutorials/git/git-clean/.
+[Git code with Mosh]: https://codewithmosh.com/p/the-ultimate-git-course
 
