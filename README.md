@@ -64,22 +64,44 @@ Please note that these are personal notes, so they reflect my own experiences an
 ## Introduction to Git and GitHub
 
 
-[Introduction to Git and GitHub][] teaches you the basics of Git, a version control system, and GitHub, a web-based hosting service for Git repositories. The course covers topics such as creating and cloning repositories, working with branches, and resolving conflicts. It also includes hands-on labs that allow you to practice what you've learned.
+[Introduction to Git and GitHub][] teaches you the basics of Git, 
+a version control system, and GitHub, a web-based hosting service for 
+Git repositories. The course covers topics such as creating and cloning 
+repositories, working with branches, and resolving conflicts. 
+It also includes hands-on labs that allow you to practice what 
+you've learned.
 
 The course is divided into three weeks.
-* Week 1, you'll learn about the basics of Git and GitHub. You'll create your first repository and clone it onto your computer. You'll also learn about branches and how to use them to track changes to your code.
-* Week 2, you'll learn more about working with branches. You'll learn how to merge branches and how to resolve conflicts. You'll also learn about remote repositories and how to push and pull changes from them.
-* Week 3, you'll learn about some advanced Git concepts. You'll learn about tags, which are used to mark specific points in your code history. You'll also learn about rebasing and merging, which are two ways to change the history of your code.
+* Week 1, you'll learn about the basics of Git and GitHub. You'll create
+your first repository and clone it onto your computer. 
+You'll also learn about branches and how to use them to track changes 
+to your code.
+* Week 2, you'll learn more about working with branches. You'll learn 
+how to merge branches and how to resolve conflicts. 
+You'll also learn about remote repositories and how to push and pull 
+changes from them.
+* Week 3, you'll learn about some advanced Git concepts. You'll learn 
+about tags, which are used to mark specific points in your code history. 
+You'll also learn about rebasing and merging, which are two ways to 
+change the history of your code.
 
 [Introduction to Git and GitHub]:https://www.coursera.org/learn/introduction-git-github/home/week/1
 
 # The Ultimate Git Course
 
-Welcome to **The Ultimate Git Course**! This comprehensive course will take you from a beginner to a proficient user of Git, the industry-standard version control system. Whether you're a developer, designer, or any other professional working with code or files, mastering Git is essential for efficient collaboration and project management.
+Welcome to **The Ultimate Git Course**! This comprehensive course will 
+take you from a beginner to a proficient user of Git, the industry-standard 
+version control system. Whether you're a developer, designer, or any 
+other professional working with code or files, mastering Git is essential 
+for efficient collaboration and project management.
 
 ## Course Overview
 
-This course is designed to provide a hands-on learning experience, with practical examples and exercises to reinforce your understanding. You'll be guided by our experienced instructor, Mosh Hamedani, who has a passion for teaching and a wealth of expertise in software development.
+This course is designed to provide a hands-on learning experience, 
+with practical examples and exercises to reinforce your understanding. 
+You'll be guided by our experienced instructor, 
+Mosh Hamedani, who has a passion for teaching and a wealth of expertise 
+in software development.
 
 Throughout the course, you will learn the following topics:
 
@@ -148,7 +170,8 @@ git status -s
 
 The `git status -s` command is a short and concise way to view the
 status of your Git repository in a simplified and easy-to-read format.
-It provides a summary of the changes between the current state of your repository's __working tree__ and the __staging area__.
+It provides a summary of the changes between the current state of your 
+repository's __working tree__ and the __staging area__.
 
 When you run `git status -s`, you will see output that looks like this:
 
@@ -231,8 +254,10 @@ This command is quite useful when you want to examine the details of
 specific objects in your Git repository.
 
 ----
-The `git show` command is used to view detailed information about Git objects,
-including blobs, trees, tags, and commits. It is similar to the `git log` command, but it provides more detail about each object.
+The `git show` command is used to view detailed information about 
+Git objects, including blobs, trees, tags, and commits. 
+It is similar to the `git log` command, but it provides more detail 
+about each object.
 
 When used to view a commit, `git show` displays the following information:
 
