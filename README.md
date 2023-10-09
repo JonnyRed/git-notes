@@ -578,7 +578,7 @@ but only for commits that are in the range between the two specified
 commit IDs. It's a useful command for reviewing a specific part of 
 your project history.
 
-## git log --oneline \<filename>
+### git log --oneline \<filename>
 
 - `filename`: This is the name of a file in your repository. When you 
 specify a filename after `git log`, Git will only show commits where 
@@ -588,6 +588,39 @@ So, when you use `git log --oneline filename`, Git will display each
 commit as a single line with its hash and message, but only for commits 
 where the specified file was changed. It's a useful command for seeing 
 how a specific file has changed over time.
+
+### Git Log format
+
+#### git log --pretty=format:\<format string>
+
+Example:
+
+`git log --pretty=format:"%an committed %h"`
+
+### Alias
+
+Example 
+
+`git config --global alias.lg "log --pretty=format:'%an committed %h on %cd'"`
+
+`git config --global -e`
+
+### git shortlog
+
+The `git shortlog` command in Git is used to summarize the output of `git log`. 
+It takes the same arguments as `git log`, but instead of displaying the 
+full commit messages, it groups the commits by author and title, 
+making it easy to see who has done what in a repository.
+
+Here's a basic breakdown of what it does:
+
+- `git shortlog`: This command summarizes the output of `git log`. 
+It groups the commits by author and then by commit title.
+
+This is a useful command when you want to get a quick overview of who has 
+been committing to your repository and what they've been doing. 
+It's often used in open source projects to generate a list of contributions 
+for release notes or other documentation.
 
 
 
