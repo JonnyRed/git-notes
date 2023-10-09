@@ -469,29 +469,158 @@ features before performing any major restoration actions.
 
 ## Git `clean`
 
-The `git clean` command is used to remove untracked files and directories from the working tree¹. Untracked files are files that have been created within your repo's working directory but have not yet been added to the repository's tracking index using the `git add` command⁴. 
+The `git clean` command is used to remove untracked files and directories 
+from the working tree¹. Untracked files are files that have been created 
+within your repo's working directory but have not yet been added to the 
+repository's tracking index using the `git add` command⁴. 
 
 Here are some common options for `git clean`:
 
-- `-n`: This option performs a “dry run” of `git clean`. It shows you which files are going to be removed without actually removing them¹⁴.
-- `-f`: This option forces the deletion of untracked files¹.
-- `-d`: This option removes untracked directories¹.
-- `-x`: This option removes ignored files¹³.
-- `-i`: This option allows you to do an interactive clean¹.
+- `-n`: This option performs a “dry run” of `git clean`. It shows you 
+which files are going to be removed without actually removing them.
+- `-f`: This option forces the deletion of untracked files.
+- `-d`: This option removes untracked directories.
+- `-x`: This option removes ignored files.
+- `-i`: This option allows you to do an interactive clean.
 
-For example, if you want to see which files will be removed without actually removing them, you can use the `-n` option like this: `git clean -n`⁴.
+For example, if you want to see which files will be removed without 
+actually removing them, you can use the `-n` option like this: `git clean -n`.
 
-Please note that when fully executed, `git clean` will make a hard filesystem deletion, similar to executing the command line `rm` utility. Make sure you really want to delete the untracked files before you run it⁴.
+Please note that when fully executed, `git clean` will make a hard filesystem 
+deletion, similar to executing the command line `rm` utility. Make sure you 
+really want to delete the untracked files before you run it.
 
-I hope this helps! Let me know if you have any other questions.
+## Browsing History
 
-Source: Conversation with Bing, 07/10/2023
-(1) Git - Clean - GeeksforGeeks. https://www.geeksforgeeks.org/git-clean/.
-(2) Git Clean | Atlassian Git Tutorial. https://www.atlassian.com/git/tutorials/undoing-changes/git-clean.
-(3) Git - git-clean Documentation. https://git-scm.com/docs/git-clean.
-(4) . https://bing.com/search?q=git+clean+command+explanation.
-(5) Git - git-clean Documentation. https://git-scm.com/docs/git-clean/2.3.10.
-(6) undefined. https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git.
-(7) undefined. https://marketsplash.com/tutorials/git/git-clean/.
-[Git code with Mosh]: https://codewithmosh.com/p/the-ultimate-git-course
+### git log --oneline --stat
+
+The `git log --oneline --stat` command is a combination of two options 
+with the `git log` command in Git, a distributed version control system. 
+Here's what each part does:
+
+- `git log`: This command shows the commit history in reverse chronological 
+order. The commits are displayed starting from the most recent commit.
+
+- `--oneline`: This is an option for `git log` that changes the output 
+format to be more compact. Each commit is shown as one line containing 
+the commit hash and the commit message.
+
+- `--stat`: This option shows some stats about each commit, specifically, 
+it shows which files were altered and the relative number of lines that 
+were added or deleted from each of them.
+
+So, when you use `git log --oneline --stat`, Git will display each 
+commit as a single line with its hash and message, followed by stats 
+about which files were changed and how many lines were added or deleted 
+in that commit. It's a useful command for getting a high-level overview 
+of your project history.
+
+
+### git log --oneline --patch
+
+- `--patch` or `-p`: This option generates patch text for each commit. 
+The patch text shows the actual changes in content that were made in each 
+commit, line by line.
+
+So, when you use `git log --oneline --patch`, Git will display each 
+commit as a single line with its hash and message, followed by the actual 
+changes made in that commit, line by line. It's a useful command for 
+reviewing your project history in detail.
+
+### git log --oneline -\<integer\>
+
+The last three commits for example:
+
+`git log --oneline -3`
+
+### git log --oneline --author=\<Name\>
+
+Filter by author 
+
+`git log --oneline --author="John Reynolds"`
+
+### git log --oneline --after="YYYY-MM-DD"
+
+Examples of date filtering:
+
+`git log --oneline --after="2022-05-01"`
+`git log --oneline --after="yesterday"`
+`git log --oneline --after="one week ago"`
+
+### git log --oneline --grep="commit string"
+
+- `--grep="commit string:"`: This option makes `git log` only show 
+__commits__ where the commit message contains the string `"commit string:"`. 
+The `--grep` option is followed by a string, and it causes `git log` 
+__to only list commits__ where that string appears in the commit message.
+
+### git log --oneline -S="string"
+
+- `-S"string"`: This option makes `git log` only show commits that added or
+removed the string `"string"`. The `-S` option is followed by a string, 
+and it causes `git log` to only list commits where that string was 
+added or removed from the codebase.
+
+
+### git log --oneline \<commit id>..\<commit id>
+
+The `git log --oneline commit_id..commit_id` command in Git shows the 
+commit history between the two specified commit IDs in a compact format. 
+
+- `commit_id..commit_id`: This is a range of commits. Git will show all 
+commits that exist in the second commit ID which don't exist in the first 
+commit ID. In other words, it shows the commits that happened between these 
+two points in the history.
+
+So, when you use `git log --oneline commit_id..commit_id`, Git will 
+display each commit as a single line with its hash and message, 
+but only for commits that are in the range between the two specified 
+commit IDs. It's a useful command for reviewing a specific part of 
+your project history.
+
+### git log --oneline \<filename>
+
+- `filename`: This is the name of a file in your repository. When you 
+specify a filename after `git log`, Git will only show commits where 
+that file was changed.
+
+So, when you use `git log --oneline filename`, Git will display each 
+commit as a single line with its hash and message, but only for commits 
+where the specified file was changed. It's a useful command for seeing 
+how a specific file has changed over time.
+
+### Git Log format
+
+#### git log --pretty=format:\<format string>
+
+Example:
+
+`git log --pretty=format:"%an committed %h"`
+
+### Alias
+
+Example 
+
+`git config --global alias.lg "log --pretty=format:'%an committed %h on %cd'"`
+
+`git config --global -e`
+
+### git shortlog
+
+The `git shortlog` command in Git is used to summarize the output of `git log`. 
+It takes the same arguments as `git log`, but instead of displaying the 
+full commit messages, it groups the commits by author and title, 
+making it easy to see who has done what in a repository.
+
+Here's a basic breakdown of what it does:
+
+- `git shortlog`: This command summarizes the output of `git log`. 
+It groups the commits by author and then by commit title.
+
+This is a useful command when you want to get a quick overview of who has 
+been committing to your repository and what they've been doing. 
+It's often used in open source projects to generate a list of contributions 
+for release notes or other documentation.
+
+
 
