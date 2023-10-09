@@ -483,15 +483,38 @@ For example, if you want to see which files will be removed without actually rem
 
 Please note that when fully executed, `git clean` will make a hard filesystem deletion, similar to executing the command line `rm` utility. Make sure you really want to delete the untracked files before you run it⁴.
 
-I hope this helps! Let me know if you have any other questions.
+## Browsing History
 
-Source: Conversation with Bing, 07/10/2023
-(1) Git - Clean - GeeksforGeeks. https://www.geeksforgeeks.org/git-clean/.
-(2) Git Clean | Atlassian Git Tutorial. https://www.atlassian.com/git/tutorials/undoing-changes/git-clean.
-(3) Git - git-clean Documentation. https://git-scm.com/docs/git-clean.
-(4) . https://bing.com/search?q=git+clean+command+explanation.
-(5) Git - git-clean Documentation. https://git-scm.com/docs/git-clean/2.3.10.
-(6) undefined. https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git.
-(7) undefined. https://marketsplash.com/tutorials/git/git-clean/.
-[Git code with Mosh]: https://codewithmosh.com/p/the-ultimate-git-course
+### git log --oneline --stat
+
+The `git log --oneline --stat` command is a combination of two options 
+with the `git log` command in Git, a distributed version control system. 
+Here's what each part does:
+
+- `git log`: This command shows the commit history in reverse chronological 
+order. The commits are displayed starting from the most recent commit.
+
+- `--oneline`: This is an option for `git log` that changes the output 
+format to be more compact. Each commit is shown as one line containing 
+the commit hash and the commit message.
+
+- `--stat`: This option shows some stats about each commit, specifically, 
+it shows which files were altered and the relative number of lines that 
+were added or deleted from each of them.
+
+So, when you use `git log --oneline --stat`, Git will display each 
+commit as a single line with its hash and message, followed by stats 
+about which files were changed and how many lines were added or deleted 
+in that commit. It's a useful command for getting a high-level overview 
+of your project history.
+
+
+### git log --oneline --patch
+### git log --oneline -<integer>
+### git log --oneline --author=<Name>
+### git log --oneline --after="YYYY-MM-DD"
+### git log --oneline --grep="string"
+
+
+
 
