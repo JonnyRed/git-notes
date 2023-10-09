@@ -469,19 +469,26 @@ features before performing any major restoration actions.
 
 ## Git `clean`
 
-The `git clean` command is used to remove untracked files and directories from the working tree¹. Untracked files are files that have been created within your repo's working directory but have not yet been added to the repository's tracking index using the `git add` command⁴. 
+The `git clean` command is used to remove untracked files and directories 
+from the working tree¹. Untracked files are files that have been created 
+within your repo's working directory but have not yet been added to the 
+repository's tracking index using the `git add` command⁴. 
 
 Here are some common options for `git clean`:
 
-- `-n`: This option performs a “dry run” of `git clean`. It shows you which files are going to be removed without actually removing them¹⁴.
-- `-f`: This option forces the deletion of untracked files¹.
-- `-d`: This option removes untracked directories¹.
-- `-x`: This option removes ignored files¹³.
-- `-i`: This option allows you to do an interactive clean¹.
+- `-n`: This option performs a “dry run” of `git clean`. It shows you 
+which files are going to be removed without actually removing them.
+- `-f`: This option forces the deletion of untracked files.
+- `-d`: This option removes untracked directories.
+- `-x`: This option removes ignored files.
+- `-i`: This option allows you to do an interactive clean.
 
-For example, if you want to see which files will be removed without actually removing them, you can use the `-n` option like this: `git clean -n`⁴.
+For example, if you want to see which files will be removed without 
+actually removing them, you can use the `-n` option like this: `git clean -n`.
 
-Please note that when fully executed, `git clean` will make a hard filesystem deletion, similar to executing the command line `rm` utility. Make sure you really want to delete the untracked files before you run it⁴.
+Please note that when fully executed, `git clean` will make a hard filesystem 
+deletion, similar to executing the command line `rm` utility. Make sure you 
+really want to delete the untracked files before you run it.
 
 ## Browsing History
 
@@ -512,10 +519,12 @@ of your project history.
 ### git log --oneline --patch
 
 - `--patch` or `-p`: This option generates patch text for each commit. 
-The patch text shows the actual changes in content that were made in each commit, line by line.
+The patch text shows the actual changes in content that were made in each 
+commit, line by line.
 
 So, when you use `git log --oneline --patch`, Git will display each 
-commit as a single line with its hash and message, followed by the actual changes made in that commit, line by line. It's a useful command for 
+commit as a single line with its hash and message, followed by the actual 
+changes made in that commit, line by line. It's a useful command for 
 reviewing your project history in detail.
 
 ### git log --oneline -\<integer\>
