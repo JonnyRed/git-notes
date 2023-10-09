@@ -510,11 +510,75 @@ of your project history.
 
 
 ### git log --oneline --patch
-### git log --oneline -<integer>
-### git log --oneline --author=<Name>
-### git log --oneline --after="YYYY-MM-DD"
-### git log --oneline --grep="string"
 
+- `--patch` or `-p`: This option generates patch text for each commit. 
+The patch text shows the actual changes in content that were made in each commit, line by line.
+
+So, when you use `git log --oneline --patch`, Git will display each 
+commit as a single line with its hash and message, followed by the actual changes made in that commit, line by line. It's a useful command for 
+reviewing your project history in detail.
+
+### git log --oneline -\<integer\>
+
+The last three commits for example:
+
+`git log --oneline -3`
+
+### git log --oneline --author=\<Name\>
+
+Filter by author 
+
+`git log --oneline --author="John Reynolds"`
+
+### git log --oneline --after="YYYY-MM-DD"
+
+Examples of date filtering:
+
+`git log --oneline --after="2022-05-01"`
+`git log --oneline --after="yesterday"`
+`git log --oneline --after="one week ago"`
+
+### git log --oneline --grep="commit string"
+
+- `--grep="commit string:"`: This option makes `git log` only show 
+__commits__ where the commit message contains the string `"commit string:"`. 
+The `--grep` option is followed by a string, and it causes `git log` 
+__to only list commits__ where that string appears in the commit message.
+
+### git log --oneline -S="string"
+
+- `-S"string"`: This option makes `git log` only show commits that added or
+removed the string `"string"`. The `-S` option is followed by a string, 
+and it causes `git log` to only list commits where that string was 
+added or removed from the codebase.
+
+
+### git log --oneline \<commit id>..\<commit id>
+
+The `git log --oneline commit_id..commit_id` command in Git shows the 
+commit history between the two specified commit IDs in a compact format. 
+
+- `commit_id..commit_id`: This is a range of commits. Git will show all 
+commits that exist in the second commit ID which don't exist in the first 
+commit ID. In other words, it shows the commits that happened between these 
+two points in the history.
+
+So, when you use `git log --oneline commit_id..commit_id`, Git will 
+display each commit as a single line with its hash and message, 
+but only for commits that are in the range between the two specified 
+commit IDs. It's a useful command for reviewing a specific part of 
+your project history.
+
+## git log --oneline \<filename>
+
+- `filename`: This is the name of a file in your repository. When you 
+specify a filename after `git log`, Git will only show commits where 
+that file was changed.
+
+So, when you use `git log --oneline filename`, Git will display each 
+commit as a single line with its hash and message, but only for commits 
+where the specified file was changed. It's a useful command for seeing 
+how a specific file has changed over time.
 
 
 
