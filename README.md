@@ -622,5 +622,35 @@ been committing to your repository and what they've been doing.
 It's often used in open source projects to generate a list of contributions 
 for release notes or other documentation.
 
+### git squash merge
 
+In Git, a squash merge is a merge option that allows you to condense the 
+Git history of feature branches when you complete a merge. Using the 
+`git merge --squash` command, you can create a single commit on your 
+main branch with the changes from a feature branch as opposed to having
+ all commits from that feature branch added to the history.
+
+Here's a step-by-step breakdown of how it works:
+
+1. **Checkout to the branch you want to merge into**: This is usually 
+your main or master branch. You can do this with `git checkout main`.
+
+2. **Perform the squash merge**: You can do this with 
+`git merge --squash feature_branch`, where `feature_branch` is the 
+name of the branch that contains your new feature.
+
+3. **Commit the changes**: After a squash merge, you'll have all the 
+changes from your feature branch staged on your main branch, 
+but they aren't committed yet. You can commit them with `git commit`.
+
+The result is that your feature branch's history is left intact, but 
+when you look at the history of your main branch, it looks like one 
+single commit was made with all the changes from your feature branch. 
+This can be useful for keeping your main branch history clean and 
+understandable.
+
+It's important to note that squash merging is a one-way operation. 
+Once it's done, there's no easy way to go back and get the individual 
+commits from a squashed branch. So it's a good idea to be sure about 
+using this option before you do it.
 
