@@ -28,9 +28,11 @@ Please note that these are personal notes, so they reflect my own experiences an
 ## Content
 
 1. Git Configuration:
-   - `git config --global user.name "John Reynolds"`: Sets up Git with your name.
-   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git with your email.
-   - `git config --global color.ui auto`: Makes sure that Git output is colored.
+   - `git config --global user.name "John Reynolds"`: Sets up Git with 
+   your name.
+   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git 
+   with your email.
+   - `git config --global color.ui auto`: Makes sure that Git output is coloured.
    - `git config --global merge.conflictstyle diff3`: Displays the original state in a conflict.
    - `git config --list`: Display configuration options.
 
@@ -622,5 +624,97 @@ been committing to your repository and what they've been doing.
 It's often used in open source projects to generate a list of contributions 
 for release notes or other documentation.
 
+### git squash merge
 
+In Git, a squash merge is a merge option that allows you to condense the 
+Git history of feature branches when you complete a merge. Using the 
+`git merge --squash` command, you can create a single commit on your 
+main branch with the changes from a feature branch as opposed to having
+ all commits from that feature branch added to the history.
 
+Here's a step-by-step breakdown of how it works:
+
+1. **Checkout to the branch you want to merge into**: This is usually 
+your main or master branch. You can do this with `git checkout main`.
+
+2. **Perform the squash merge**: You can do this with 
+`git merge --squash feature_branch`, where `feature_branch` is the 
+name of the branch that contains your new feature.
+
+3. **Commit the changes**: After a squash merge, you'll have all the 
+changes from your feature branch staged on your main branch, 
+but they aren't committed yet. You can commit them with `git commit`.
+
+The result is that your feature branch's history is left intact, but 
+when you look at the history of your main branch, it looks like one 
+single commit was made with all the changes from your feature branch. 
+This can be useful for keeping your main branch history clean and 
+understandable.
+
+It's important to note that squash merging is a one-way operation. 
+Once it's done, there's no easy way to go back and get the individual 
+commits from a squashed branch. So it's a good idea to be sure about 
+using this option before you do it.
+
+### git rebase
+
+In Git, `rebase` is a command that allows you to integrate changes from 
+one branch into another. It's an alternative to the `git merge` command. 
+The primary reason to use `rebase` is to maintain a linear project history.
+
+Here's a step-by-step breakdown of how it works:
+
+1. **Checkout to the branch you want to rebase**: This is usually your 
+feature branch that you want to update with changes from the main branch. 
+You can do this with `git checkout feature_branch`.
+
+2. **Perform the rebase**: You can do this with `git rebase main`, where 
+`main` is the branch that has the new commits you want to include in your 
+feature branch.
+
+The result is that your feature branch will be rewritten as if it was based 
+on the head of the main branch, as opposed to the commit it was actually 
+based on. This makes your feature branch up-to-date with the latest code 
+on the main branch.
+
+During a rebase, conflicts may arise if there are changes in both branches 
+that touch the same parts of the code. Git will pause and allow you to resolve 
+those conflicts manually. Once resolved, you can continue the rebase with 
+`git rebase --continue`.
+
+It's important to note that because `rebase` changes the commit history 
+by creating new commits for each commit in the original branch, 
+it should be used with caution. It's generally recommended not to use 
+`rebase` on public branches that others are working on.
+
+Remember, always create a backup or use a temporary branch when performing 
+operations that rewrite history (like `git rebase`) if you're unsure 
+about the process.
+
+### git cherry-pick
+
+In Git, `cherry-pick` is a powerful command that enables arbitrary Git 
+commits to be picked by reference and appended to the current working HEAD. 
+Cherry picking is the act of picking a commit from a branch and applying 
+it to another.
+
+Here's a step-by-step breakdown of how it works:
+
+1. **Identify the commit you want to pick**: This is usually done by looking 
+at the log of another branch with `git log`.
+
+2. **Apply the commit**: You can do this with `git cherry-pick commit_id`, 
+where `commit_id` is the hash of the commit you want to apply.
+
+The result is that the changes introduced by the specified commit are 
+applied to your current branch. A new commit is created with this change, 
+and your branch's history remains linear.
+
+It's important to note that cherry picking only applies the changes introduced 
+by the commit you pick, not the entire state of the repository at that commit. 
+Changes made in other commits are not included.
+
+Cherry picking can be very useful when you want to get some useful work 
+from another branch without merging or pulling in all changes from that 
+branch. But be careful: cherry picking can sometimes lead to duplicate 
+commits and could make your history harder to understand.
