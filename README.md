@@ -28,9 +28,11 @@ Please note that these are personal notes, so they reflect my own experiences an
 ## Content
 
 1. Git Configuration:
-   - `git config --global user.name "John Reynolds"`: Sets up Git with your name.
-   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git with your email.
-   - `git config --global color.ui auto`: Makes sure that Git output is colored.
+   - `git config --global user.name "John Reynolds"`: Sets up Git with 
+   your name.
+   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git 
+   with your email.
+   - `git config --global color.ui auto`: Makes sure that Git output is coloured.
    - `git config --global merge.conflictstyle diff3`: Displays the original state in a conflict.
    - `git config --list`: Display configuration options.
 
