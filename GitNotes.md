@@ -47,26 +47,26 @@ before committing them to the repository's history.
 
 |Change Configuration|Command|
 |--------------------|-------|
-|Sets up Git with your name|```git config --global user.name "John Reynolds"```|
-|Sets up Git with your email|```git config --global user.email "jjmreynolds@gmail.com"```|
-|Makes sure that Git output is colored|```git config --global color.ui auto```|
-|Displays the original state in a conflict|```git config --global merge.conflictstyle diff3```|
-|Display configuration options|```git config --list```|
-|Edit Global Settings|```git config --global -e```|
+|Sets up Git with your name|git config --global user.name "John Reynolds"|
+|Sets up Git with your email|git config --global user.email "<jjmreynolds@gmail.com>"|
+|Makes sure that Git output is colored|git config --global color.ui auto|
+|Displays the original state in a conflict|git config --global merge.conflictstyle diff3|
+|Display configuration options|git config --list|
 
 ## Bash commands
 
-|Description of Command|Command|
-|--------------------|-------|
-|Used to list files and directories|```ls```|
-|Used to create a new directory|```mkdir```|
-|Used to change directories|```cd```|
-|Used to remove files and directories|```rm```|
-|Used print current directory|```pwd```|
+| Description of Command               | Command |
+|--------------------------------------|---------|
+| Used to list files and directories   | ls      |
+| Used to create a new directory       | mkdir   |
+| Used to change directories           | cd      |
+| Used to remove files and directories | rm      |
+| Used print current directory         | pwd     |
 
 ## git version
 
 ## git init
+
 Initialized empty Git repository
 
 * [Initializing a Repository in an Existing Directory](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#Initializing-a-Repository-in-an-Existing-Directory)
@@ -74,6 +74,7 @@ Initialized empty Git repository
 * [git init Tutorial](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 
 ## git clone
+
 ```bash
 git clone https://github.com/udacity/course-git-blog-project
 git clone https://github.com/libgit2/libgit2 mylibgit
@@ -90,7 +91,6 @@ by default will create a directory with the same name as the repository.
 * can be given a second argument that will be used as the name of the directory
 will create the new repository inside of the current working directory
 
-
 * [Cloning an Existing Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository)
 * [git clone docs](https://git-scm.com/docs/git-clone)
 * [git clone Tutorial](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
@@ -100,7 +100,6 @@ will create the new repository inside of the current working directory
 To recap, the .gitignore file is used to tell Git about the files that
 Git should not track. This file should be placed in the same directory
 that the .git directory is in.
-
 
 * [GitHub ignore files](https://github.com/github/gitignore)
 * [Ignoring files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
@@ -132,20 +131,17 @@ git log --graph --oneline
 git log --oneline --decorate --graph --all
 ```
 
-The `git log --stat --oneline` command provides a concise and summarized view of the commit history in a Git repository. It displays each commit as a one-liner along with a summary of the changes introduced by that commit.
-
 ## Git Status
 
-__Always run Git Status__
+* Always run Git Status
 
-```
+```git
 git status
 ```
 
 ### git status -s
 
-
-```
+```git
 git status -s
 ```
 
@@ -155,7 +151,7 @@ It provides a summary of the changes between the current state of your repositor
 
 When you run `git status -s`, you will see output that looks like this:
 
-```
+```git
  M file1.txt
 MM file2.txt
 A  file3.txt
@@ -169,24 +165,24 @@ The status output is organized into columns:
 
 Here's the meaning of the possible status codes:
 
-- `??`: Untracked files - Files that are present in the working tree
+* `??`: Untracked files - Files that are present in the working tree
 but not yet tracked by Git (not added to the staging area).
 
-- `A`: New file addition - A new file has been added to the staging area.
+* `A`: New file addition - A new file has been added to the staging area.
 
-- `M`: File modification - A file has been modified in the working tree,
+* `M`: File modification - A file has been modified in the working tree,
 and the changes are staged and ready to be committed.
 
-- `D`: File deletion - A file has been deleted in the working tree,
+* `D`: File deletion - A file has been deleted in the working tree,
 and the deletion is staged and ready to be committed.
 
-- `R`: File rename - A file has been renamed in the working tree,
+* `R`: File rename - A file has been renamed in the working tree,
 and the rename is staged and ready to be committed.
 
-- `C`: File copy - A file has been copied in the working tree,
+* `C`: File copy - A file has been copied in the working tree,
 and the copy is staged and ready to be committed.
 
-- `U`: Conflict - A merge conflict exists in the file between the branch
+* `U`: Conflict - A merge conflict exists in the file between the branch
 you are on and the branch you are merging or rebasing.
 
 The absence of any letter in the first column indicates that the file's
@@ -195,13 +191,13 @@ status in the staging area has not changed since the last commit.
 The absence of any letter in the second column indicates that the file's
 status in the working tree has not changed since the last commit.
 
-##  git ls-files
+## git ls-files
 
 The git ls-files command lists the files that are tracked by Git.
 This includes files that are in the index, as well as files that are
 in the working tree but not in the index.
 
-```
+```git
 git ls-files
 
 ```
@@ -214,10 +210,9 @@ Here are some of the most commonly used options for git ls-files:
 |-z | Show the filenames verbatim.|
 |-i | Show only ignored files.|
 |--stage | Show the stage information for each file.|
-|--unmerged | Show unmerged files.|
+|--un-merged | Show un-merged files.|
 |--deleted | Show deleted files.|
 |--others | Show files that are not tracked by Git.|
-
 
 ## git ls-tree
 
@@ -232,11 +227,11 @@ The basic syntax of the `git ls-tree` command is as follows:
 git ls-tree [<commit>] [<path>]
 ```
 
-- `<commit>`: Optional. The commit hash or reference to the commit that
+* `<commit>`: Optional. The commit hash or reference to the commit that
 contains the tree object you want to list. If not specified, it
 defaults to the current commit (HEAD).
 
-- `<path>`: Optional. The path to a specific subdirectory or file
+* `<path>`: Optional. The path to a specific subdirectory or file
 within the tree object. If provided, the command will display the
 contents of the tree at the specified path. If omitted, it shows the
 entire tree object.
@@ -264,21 +259,21 @@ git ls-tree HEAD path/to/subdirectory
 The output of the `git ls-tree` command displays information about
 each entry in the tree. The format of the output is:
 
-```
-<mode> <type> <object>	<file/path>
+```git
+<mode> <type> <object> <file/path>
 ```
 
-- `<mode>`: The file mode of the entry, which represents the
+* `<mode>`: The file mode of the entry, which represents the
 permissions and object type
 (e.g., 100644 for a regular file, 040000 for a subdirectory).
 
-- `<type>`: The type of the entry, which can be "blob" for a file
+* `<type>`: The type of the entry, which can be "blob" for a file
 or "tree" for a subdirectory.
 
-- `<object>`: The SHA-1 hash of the object (either blob or tree)
+* `<object>`: The SHA-1 hash of the object (either blob or tree)
 associated with the entry.
 
-- `<file/path>`: The relative path to the file or subdirectory
+* `<file/path>`: The relative path to the file or subdirectory
 within the tree.
 
 The `git ls-tree` command is particularly useful for inspecting the
@@ -303,7 +298,6 @@ to tell Git to add the current directory (and all nested files)
 * `git reset`remove every thing from staging
 * `git reset HEAD -- <file>` remove single file
 
-
 ## Git Show
 
 The `git show` command is used to display information about a specific
@@ -317,7 +311,7 @@ The basic syntax of the `git show` command is as follows:
 git show [<object>]
 ```
 
-- `<object>`: The object you want to show. It can be a commit hash,
+* `<object>`: The object you want to show. It can be a commit hash,
 tag name, branch name, or any other valid Git object reference.
 
 Here are some common uses of the `git show` command:
@@ -376,6 +370,7 @@ by commits or tags, and understanding the content of tree objects in
 the repository.
 
 ## Git Stash
+
 the stash command is used to temporarily store changes that are not
 ready to be committed. It allows you to save your work in progress,
 such as modifications to tracked files and staged changes, without
@@ -383,7 +378,8 @@ creating a commit. The changes are saved in a "stash," which is a
 stack-like storage area where you can push and pop changes.
 
 The basic usage of the git stash command is as follows:
-```
+
+```git
 git stash
 ```
 
@@ -416,6 +412,7 @@ from the stash stack.
 * git stash clear: Removes all stash entries from the stash stack.
 
 ## Git Staged Files
+
 List files in the staging area
 
 ```git ls-files```
@@ -442,7 +439,7 @@ an optional body. The header provides a concise summary of the commit,
 while the body provides additional details and context. Here's an
 example of a standard commit message structure:
 
-```
+```bash
 <type>: <subject>
 
 <body>
@@ -452,14 +449,14 @@ Let's break down each component:
 
 1. `<type>`: The type of the commit. It can be one of the following:
 
-   - **feat**: A new feature
-   - **fix**: A bug fix
-   - **docs**: Documentation changes
-   - **style**: Code style changes (e.g., formatting)
-   - **refactor**: Code refactoring (without adding new features or
+   * __feat__: A new feature
+   * __fix__: A bug fix
+   * __docs__: Documentation changes
+   * __style__: Code style changes (e.g., formatting)
+   * __refactor__: Code refactoring (without adding new features or
    fixing bugs)
-   - **test**: Adding or modifying tests
-   - **chore**: Other changes that don't fit into the above categories
+   * __test__: Adding or modifying tests
+   * __chore__: Other changes that don't fit into the above categories
    (e.g., build scripts, tooling)
 
 2. `<subject>`: A brief and descriptive summary of the commit. It should
@@ -477,7 +474,6 @@ or team for consistency and clarity.
 
 [Git Udacity's Commit Style](https://udacity.github.io/git-styleguide/)
 
-
 ## Git Difftool
 
 Will use ```Winmerge```
@@ -490,7 +486,7 @@ for all modified files:
 If you have already staged some changes and want to see what you've
 staged so far, you can:
 
-```
+```git
 git diff --staged
 ```
 
@@ -513,8 +509,6 @@ Various ways to check your working tree
 
 [git diff](https://git-scm.com/docs/git-diff)
 
-
-
 ## Git Tag
 
 The command we will be using to interact with the repository's tags is the ```git tag``` command
@@ -535,17 +529,16 @@ information such as:___
 * The date the tag was made
 * A message for the tag
 
-__Always use annotated tags.__
+* Always use annotated tags
 
-
-__Verify Tag__
+* Verify Tag
 
 After saving and quitting the editor, nothing is displayed on the
 command line. So how do we know that a tag was actually added to the
 project? If you type out just ```git tag```, it will display all tags
 that are in the repository.
 
-__Git Log's --decorate Flag__
+* Git Log's --decorate Flag
 
 As you've learned, git log is a pretty powerful tool for letting us
 check out a repository's commits. We've already looked at a couple of
@@ -553,19 +546,17 @@ its flags, but it's time to add a new one to our tool belt.
 The --decorate flag will show us some details that are hidden from
 the default view.
 
-```git log --decorate ```
+```git log --decorate```
 
-__Deleting A Tag__
+* Deleting A Tag
 
 A Git tag can be deleted with the ```-d``` flag (for delete!) and the
 name of the tag:
-
 
 ```bash
 git tag -delete v1.0
 git tag -d v1.0
 ```
-
 
 __Push all tags to server__
 If you have a lot of tags that you want to push up at once, you can
@@ -576,14 +567,15 @@ all of your tags to the remote server that are not already there.
 git push --tags
 git push origin --tags
 ```
-__View remote tags__
+
+* View remote tags
 
 ```bash
 git ls-remote --tags origin
 git ls-remote --tags origin
 ```
 
-__Adding A Tag To A Past__
+* Adding A Tag To A Past
 
 Provide the SHA of the commit you want to tag
 
@@ -594,7 +586,6 @@ git tag -a v1.0 a87984
 * [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 * [Git Tag](https://git-scm.com/docs/git-tag)
 
-
 ## Git Branch
 
 A Git branch is used to separate work. This tactic is commonly used
@@ -602,17 +593,17 @@ when new features are in development but need to be kept distinct until
 ready for general release.
 
 Can be used to:
+
 * List all branch names in the repository
 * Create new branches
 * Delete branches
 
-
 ## Create A Branch
 
-|&nbsp;|&nbsp;|
-|------|------|
-|```git branch sidebar```|To create a branch, all you have  to do is <br/>use git branch and provide it the name of the<br/> branch you want it to create|
-|```git branch```|To list the branches, I use the  git branch command <br/>with no arguments.|
+| &nbsp;                   | &nbsp;                                                                                                                          |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| ```git branch sidebar``` | To create a branch, all you have  to do is <br/>use git branch and provide it the name of the<br/> branch you want it to create |
+| ```git branch```         | To list the branches, I use the  git branch command <br/>with no arguments.                                                     |
 
 ```bash
 git branch -v
@@ -624,19 +615,18 @@ git branch --nomerged
 
 To switch between branches, we need to use Git's checkout command.
 
-|&nbsp;|&nbsp;|
-|------|------|
-|```git checkout sidebar```|Command duplicates the master to the new branch|
-
+| &nbsp;                     | &nbsp;                                          |
+|----------------------------|-------------------------------------------------|
+| ```git checkout sidebar``` | Command duplicates the master to the new branch |
 
 Running this command will:
 
 * Remove all files and directories from the Working Directory that Git is tracking
-    * files that Git tracks are stored in the repository, so nothing is lost
+  * files that Git tracks are stored in the repository, so nothing is lost
 * Go into the repository and pull out all of the files and directories
 of the commit that the branch points to
 
-__Branches In The Log__
+Branches In The Log
 
 ```git log --oneline --decorate```
 
@@ -719,16 +709,14 @@ $ git branch -d footer-fix
 ```
 
 This command is used to:
+
 * List out local branches
 * Create new branches
 * Remove branches
 
-
-
 * [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 * [Learn Git Branching](http://learngitbranching.js.org/)
 * [Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches)
-
 
 ## Git Merge
 
@@ -739,6 +727,7 @@ The git merge command is used to combine Git branches:
 ```bash
 git merge <name-of-branch-to-merge-in>
 ```
+
 To see log and history + graph of merge
 
 ```bash
@@ -751,8 +740,8 @@ To abort the current merge:
 git merge --abort
 ```
 
-
 When a merge happens, Git will:
+
 * Look at the branches that it's going to merge
 * Look back along the branch's history to find a single commit that
 both branches have in their commit history
@@ -764,9 +753,10 @@ __When we merge, we're merging some other branch into the current
 We're not merging the current branch into the other branch.__
 
 ----
+
 * It's very important to know which branch you're on when you're about
 to merge branches together.
-    * Remember that making a merge makes a commit.
+  * Remember that making a merge makes a commit.
 
 If you make a merge on the wrong branch, use this command to undo the merge:
 
@@ -788,12 +778,11 @@ There are two types of merges:
 
 * Fast-forward merge – the branch being merged in must be ahead of the
 checked out branch.
-    * The checked out branch's pointer will just be moved forward to
+  * The checked out branch's pointer will just be moved forward to
     point to the same commit as the other branch.
 * The regular type of merge
-    * two divergent branches are combined
-    * a merge commit is created
-
+  * two divergent branches are combined
+  * a merge commit is created
 
 * [Basic Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging)
 * [git-merge](https://git-scm.com/docs/git-merge)
@@ -804,7 +793,7 @@ checked out branch.
 
 ----
 
-__Merge Conflict__
+* Merge Conflict
 
 A merge conflict will happen when the exact same line(s) are changed
 in separate branches
@@ -813,6 +802,7 @@ A merge conflict happens when the same line or lines have been changed
 on different branches that are being merged. Git will pause mid-merge
 telling you that there is a conflict and will tell you in what file or
 files the conflict occurred. To resolve the conflict in a file:
+
 * Locate and remove all lines with merge conflict indicators
 * Determine what to keep
 * Save the file(s)
@@ -822,22 +812,19 @@ Be careful that a file might have merge conflicts in multiple parts
 of the file, so make sure you check the entire file for merge conflict
 indicators - a quick search for <<< should help you locate all of them.
 
-
-
 * [Basic Merge Conflicts](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts)
 * [How Conflicts Are Presented](https://git-scm.com/docs/git-merge#_how_conflicts_are_presented)
-
-
 
 ## Changing The Last Commit
 
 ```bash
-$ git commit --amend
+git commit --amend
 ```
 
 If your Working Directory is clean  then running ```git commit --amend``` will let you provide a new commit message. Your code editor will open up and display the original commit message. Just fix a misspelling or completely reword it! Then save it and close the editor to lock in the new commit message.
 
 ## Add Forgotten Files To Commit
+
 Alternatively, ```git commit --amend``` will let you include files
 (or changes to files) you might've forgotten to include. Let's say
 you've updated the color of all navigation links across your entire
@@ -870,6 +857,7 @@ creating a new one.
 
 * When you make a change, but have not yet staged it, you can undo your
 work.
+
 1. Confirm that the file is unstaged by running ```git status```
 1. Choose an option and undo your changes:
     * overwrite local changes ```git checkout -- <file>```
@@ -881,13 +869,14 @@ work.
 [Undo Possibilities][]
 
 * If you added a file to staging, you can undo it.
+
 1. Confirm that the file is staged (that you used git add <file>) by
 running ```git status```
 1. Choose an option and undo your changes:
-    * To unstage the file but keep your changes
+    * To un-stage the file but keep your changes
     ```git restore --staged <file>```
-    * To unstage everything but keep your changes ```git reset```
-    * To unstage the file to current commit (HEAD)
+    * To un-stage everything but keep your changes ```git reset```
+    * To un-stage the file to current commit (HEAD)
     ```git reset HEAD <file>```
     * To discard all local changes, but save them for later
     ```git stash```
@@ -905,15 +894,15 @@ git revert <SHA-of-commit-to-revert>
 ```
 
 This command:
+
 * Will undo the changes that were made by the provided commit
 * Creates a new commit to record the change
-
 
 * [git-revert](https://git-scm.com/docs/git-revert)
 * [git revert](https://www.atlassian.com/git/tutorials/undoing-changes)
 
-
 ## Reset vs Revert
+
 At first glance, resetting might seem coincidentally close to reverting,
  but they are actually quite different. Reverting creates a new commit
  that reverts or undoes a previous commit. Resetting, on the other hand,
@@ -926,15 +915,11 @@ This is one of the few commands that lets you erase commits from the
 repository. If a commit is no longer in the repository,
 then its content is gone._
 
-_To alleviate the stress a bit, **Git does keep track of everything
-for about 30 days** before it completely erases anything. To access
-this content, you'll need to use the ```git reflog``` command.
-Check out these links for more info:
+_To alleviate the stress a bit, __Git does keep track of everything for about 30 days__ before it completely erases anything. To access this content, you'll need to use the ```git reflog``` command. Check out these links for more info:
 
 * [git-reflog](https://git-scm.com/docs/git-reflog)
 * [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history)
 * [reflog, your safety net](http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html)
-
 
 ## Remote
 
@@ -946,10 +931,7 @@ git remote -v
 
 [Create repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
 
-The preferred method of starting a repository is to create the github
-repository in github and then clone it locally. it's best to generate
-the .ignore in the github repository it does give you that option.
-
+The preferred method of starting a repository is to create the github repository in github and then clone it locally. it's best to generate the .ignore in the github repository it does give you that option.
 
 ## Adding an existing project to GitHub
 
@@ -963,6 +945,7 @@ git push -u origin main
 ```
 
 ## Deleting a repository
+
 1. On GitHub.com, navigate to the main page of the repository.
 1. Under your repository name, click Settings.
 1. Under Danger Zone, click Delete this repository.
