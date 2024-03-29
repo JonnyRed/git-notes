@@ -69,15 +69,16 @@ It also includes hands-on labs that allow you to practice what
 you've learned.
 
 The course is divided into three weeks.
-* Week 1, you'll learn about the basics of Git and GitHub. You'll create
+
+- Week 1, you'll learn about the basics of Git and GitHub. You'll create
 your first repository and clone it onto your computer. 
 You'll also learn about branches and how to use them to track changes 
 to your code.
-* Week 2, you'll learn more about working with branches. You'll learn 
+- Week 2, you'll learn more about working with branches. You'll learn 
 how to merge branches and how to resolve conflicts. 
 You'll also learn about remote repositories and how to push and pull 
 changes from them.
-* Week 3, you'll learn about some advanced Git concepts. You'll learn 
+- Week 3, you'll learn about some advanced Git concepts. You'll learn 
 about tags, which are used to mark specific points in your code history. 
 You'll also learn about rebasing and merging, which are two ways to 
 change the history of your code.
@@ -246,6 +247,7 @@ commit.
 
 There are several options you can use with `git show` to customize its 
 output, such as:
+
 - `--pretty[=<format>]`: Pretty-print the contents of the commit logs 
 in a given format.
 - `--abbrev-commit`: Instead of showing the full 40-byte hexadecimal 
@@ -263,7 +265,6 @@ before showing it in the output.
 This command is quite useful when you want to examine the details of 
 specific objects in your Git repository.
 
-----
 The `git show` command is used to view detailed information about 
 Git objects, including blobs, trees, tags, and commits. 
 It is similar to the `git log` command, but it provides more detail 
@@ -271,25 +272,25 @@ about each object.
 
 When used to view a commit, `git show` displays the following information:
 
-* The commit hash
-* The author name and email address
-* The commit date and time
-* The commit message
-* A diff of the changes introduced by the commit
+- The commit hash
+- The author name and email address
+- The commit date and time
+- The commit message
+- A diff of the changes introduced by the commit
 
 `git show` can also be used to view specific files within a commit,
 or to view a range of commits. For example, to view the changes to the file
  `README.md` in the most recent commit, you would use the following command:
 
 
-```
+```bash
 git show README.md
 ```
 
 To view all of the commits in the `master` branch that were made by the user
 `john.doe`, you would use the following command:
 
-```
+```bash
 git show master --author=john.doe
 ```
 
@@ -299,27 +300,27 @@ more about how a project has evolved over time.
 
 Here are some examples of how `git show` can be used:
 
-* To find the commit that introduced a particular bug:
+- To find the commit that introduced a particular bug:
 
-```
+```bash
 git show --before=bug-fix-commit --after=buggy-commit
 ```
 
-* To track down the changes to a specific file over time:
+- To track down the changes to a specific file over time:
 
-```
+```bash
 git show --name-only <file-name>
 ```
 
-* To see how a commit message has evolved:
+- To see how a commit message has evolved:
 
-```
+```bash
 git show --pretty=format:"%h %s" --first-parent <commit-hash>
 ```
 
 `git show` is a versatile command with many uses. It is a valuable tool for any Git user.
 
-### git show
+### git show1
 
 The `git show` command is a versatile tool in Git that is used to view
 expanded details on Git objects such as blobs, trees, tags, and commits.
@@ -504,7 +505,7 @@ It is often used in combination with other Git commands to examine
 the repository's history and track changes to files and directories
 over time.
 
-### git show - repeat
+### git show2
 
 The `git show` command is a versatile tool in Git that is used to view
 expanded details on Git objects such as blobs, trees, tags, and commits.
@@ -544,7 +545,8 @@ This command is quite useful when you want to examine the details of
 specific objects in your Git repository.
 
 The `git show` command is used to view detailed information about Git objects,
-including blobs, trees, tags, and commits. It is similar to the `git log` command, but it provides more detail about each object.
+including blobs, trees, tags, and commits. It is similar to the `git log` 
+command, but it provides more detail about each object.
 
 When used to view a commit, `git show` displays the following information:
 
@@ -907,7 +909,8 @@ Cherry picking can be very useful when you want to get some useful work
 from another branch without merging or pulling in all changes from that 
 branch. But be careful: cherry picking can sometimes lead to duplicate 
 commits and could make your history harder to understand.
-### Git `clean`
+
+### Git `clean1`
 
 The `git clean` command is used to remove untracked files and directories
 from the working tree¹. Untracked files are files that have been created
@@ -929,133 +932,3 @@ actually removing them, you can use the `-n` option like this: `git clean -n`.
 Please note that when fully executed, `git clean` will make a hard filesystem
 deletion, similar to executing the command line `rm` utility. Make sure you
 really want to delete the untracked files before you run it.
-
-## Browsing History
-
-### git log --oneline --stat
-
-The `git log --oneline --stat` command is a combination of two options
-with the `git log` command in Git, a distributed version control system.
-Here's what each part does:
-
-- `git log`: This command shows the commit history in reverse chronological
-order. The commits are displayed starting from the most recent commit.
-
-- `--oneline`: This is an option for `git log` that changes the output
-format to be more compact. Each commit is shown as one line containing
-the commit hash and the commit message.
-
-- `--stat`: This option shows some stats about each commit, specifically,
-it shows which files were altered and the relative number of lines that
-were added or deleted from each of them.
-
-So, when you use `git log --oneline --stat`, Git will display each
-commit as a single line with its hash and message, followed by stats
-about which files were changed and how many lines were added or deleted
-in that commit. It's a useful command for getting a high-level overview
-of your project history.
-
-### git log --oneline --patch
-
-- `--patch` or `-p`: This option generates patch text for each commit.
-The patch text shows the actual changes in content that were made in each
-commit, line by line.
-
-So, when you use `git log --oneline --patch`, Git will display each
-commit as a single line with its hash and message, followed by the actual
-changes made in that commit, line by line. It's a useful command for
-reviewing your project history in detail.
-
-### git log --oneline -\<integer\>
-
-The last three commits for example:
-
-`git log --oneline -3`
-
-### git log --oneline --author=\<Name\>
-
-Filter by author
-
-`git log --oneline --author="John Reynolds"`
-
-### git log --oneline --after="YYYY-MM-DD"
-
-Examples of date filtering:
-
-`git log --oneline --after="2022-05-01"`
-`git log --oneline --after="yesterday"`
-`git log --oneline --after="one week ago"`
-
-### git log --oneline --grep="commit string"
-
-- `--grep="commit string:"`: This option makes `git log` only show
-**commits** where the commit message contains the string `"commit string:"`.
-The `--grep` option is followed by a string, and it causes `git log`
-**to only list commits** where that string appears in the commit message.
-
-### git log --oneline -S="string"
-
-- `-S"string"`: This option makes `git log` only show commits that added or
-removed the string `"string"`. The `-S` option is followed by a string,
-and it causes `git log` to only list commits where that string was
-added or removed from the codebase.
-
-### git log --oneline \<commit id>..\<commit id>
-
-The `git log --oneline commit_id..commit_id` command in Git shows the
-commit history between the two specified commit IDs in a compact format.
-
-- `commit_id..commit_id`: This is a range of commits. Git will show all
-commits that exist in the second commit ID which don't exist in the first
-commit ID. In other words, it shows the commits that happened between these
-two points in the history.
-
-So, when you use `git log --oneline commit_id..commit_id`, Git will
-display each commit as a single line with its hash and message,
-but only for commits that are in the range between the two specified
-commit IDs. It's a useful command for reviewing a specific part of
-your project history.
-
-### git log --oneline \<filename>
-
-- `filename`: This is the name of a file in your repository. When you
-specify a filename after `git log`, Git will only show commits where
-that file was changed.
-
-So, when you use `git log --oneline filename`, Git will display each
-commit as a single line with its hash and message, but only for commits
-where the specified file was changed. It's a useful command for seeing
-how a specific file has changed over time.
-
-### Git Log format
-
-#### git log --pretty=format:\<format string>
-
-Example:
-
-`git log --pretty=format:"%an committed %h"`
-
-### Alias
-
-Example
-
-`git config --global alias.lg "log --pretty=format:'%an committed %h on %cd'"`
-
-`git config --global -e`
-
-### git shortlog
-
-The `git shortlog` command in Git is used to summarize the output of `git log`.
-It takes the same arguments as `git log`, but instead of displaying the
-full commit messages, it groups the commits by author and title,
-making it easy to see who has done what in a repository.
-
-Here's a basic breakdown of what it does:
-
-- `git shortlog`: This command summarizes the output of `git log`.
-It groups the commits by author and then by commit title.
-
-This is a useful command when you want to get a quick overview of who has
-been committing to your repository and what they've been doing.
-It's often used in open source projects to generate a list of contributions
-for release notes or other documentation.
