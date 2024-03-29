@@ -122,6 +122,8 @@ Repository reference
 abbreviated stats for each commit
 
 ```bash
+git log --oneline             # One line summary of commits   
+git log --oneline  --reverse  # Reversed ne line summary of commits   
 git log --patch -2
 git log --stat
 git log --pretty=oneline
@@ -131,11 +133,16 @@ git log --graph --oneline
 git log --oneline --decorate --graph --all
 ```
 
+The `git log --stat --oneline` command provides a concise and summarized
+view of the commit history in a Git repository. It displays each commit
+as a one-liner along with a summary of the changes introduced by that
+commit.
+
 ## Git Status
 
-* Always run Git Status
+Always run Git Status
 
-```git
+```bash
 git status
 ```
 
@@ -244,13 +251,13 @@ Let's explore some examples:
 git ls-tree HEAD
 ```
 
-2. To list the contents of a tree in a specific commit:
+1. To list the contents of a tree in a specific commit:
 
 ```bash
 git ls-tree <commit-hash>
 ```
 
-3. To list the contents of a subdirectory within a tree:
+1. To list the contents of a subdirectory within a tree:
 
 ```bash
 git ls-tree HEAD path/to/subdirectory
@@ -259,7 +266,7 @@ git ls-tree HEAD path/to/subdirectory
 The output of the `git ls-tree` command displays information about
 each entry in the tree. The format of the output is:
 
-```git
+```bash
 <mode> <type> <object> <file/path>
 ```
 
@@ -379,7 +386,7 @@ stack-like storage area where you can push and pop changes.
 
 The basic usage of the git stash command is as follows:
 
-```git
+```bash
 git stash
 ```
 
@@ -931,7 +938,9 @@ git remote -v
 
 [Create repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
 
-The preferred method of starting a repository is to create the github repository in github and then clone it locally. it's best to generate the .ignore in the github repository it does give you that option.
+The preferred method of starting a repository is to create the github
+repository in github and then clone it locally. it's best to generate
+the .ignore in the github repository it does give you that option.
 
 ## Adding an existing project to GitHub
 
