@@ -211,15 +211,15 @@ git ls-files
 
 Here are some of the most commonly used options for git ls-files:
 
-|Option|Effect|
-|------|------|
-|-c | Show the file mode.|
-|-z | Show the filenames verbatim.|
-|-i | Show only ignored files.|
-|--stage | Show the stage information for each file.|
-|--un-merged | Show un-merged files.|
-|--deleted | Show deleted files.|
-|--others | Show files that are not tracked by Git.|
+| Option      | Effect                                    |
+|-------------|-------------------------------------------|
+| -c          | Show the file mode.                       |
+| -z          | Show the filenames verbatim.              |
+| -i          | Show only ignored files.                  |
+| --stage     | Show the stage information for each file. |
+| --un-merged | Show un-merged files.                     |
+| --deleted   | Show deleted files.                       |
+| --others    | Show files that are not tracked by Git.   |
 
 ## git ls-tree
 
@@ -607,8 +607,8 @@ Can be used to:
 
 ## Create A Branch
 
-| &nbsp;                   | &nbsp;                                                                                                                          |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| &nbsp;                   | &nbsp;|
+|--------------------------|-------|
 | ```git branch sidebar``` | To create a branch, all you have  to do is <br/>use git branch and provide it the name of the<br/> branch you want it to create |
 | ```git branch```         | To list the branches, I use the  git branch command <br/>with no arguments.                                                     |
 
@@ -771,7 +771,8 @@ If you make a merge on the wrong branch, use this command to undo the merge:
 git reset --hard HEAD^
 ```
 
-Make sure to include the ^ character! It's a known as a "Relative Commit Reference" and indicates "the parent commit".
+Make sure to include the ^ character! It's a known as a
+"Relative Commit Reference" and indicates "the parent commit".
 
 ----
 
@@ -828,7 +829,11 @@ indicators - a quick search for <<< should help you locate all of them.
 git commit --amend
 ```
 
-If your Working Directory is clean  then running ```git commit --amend``` will let you provide a new commit message. Your code editor will open up and display the original commit message. Just fix a misspelling or completely reword it! Then save it and close the editor to lock in the new commit message.
+If your Working Directory is clean  then running ```git commit --amend```
+will let you provide a new commit message. Your code editor will open up
+and display the original commit message. Just fix a misspelling or
+completely reword it! Then save it and close the editor to lock in the
+new commit message.
 
 ## Add Forgotten Files To Commit
 
@@ -959,4 +964,5 @@ git push -u origin main
 1. Under your repository name, click Settings.
 1. Under Danger Zone, click Delete this repository.
 1. Read the warnings.
-1. To verify that you're deleting the correct repository, type the name of the repository you want to delete.
+1. To verify that you're deleting the correct repository, type the name 
+of the repository you want to delete.
