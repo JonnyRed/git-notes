@@ -25,9 +25,9 @@ Please note that these are personal notes, so they reflect my own experiences an
 ### Content
 
 1. Git Configuration:
-   - `git config --global user.name "John Reynolds"`: Sets up Git with 
+   - `git config --global user.name "John Reynolds"`: Sets up Git with
    your name.
-   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git 
+   - `git config --global user.email "jjmreynolds@gmail.com"`: Sets up Git
    with your email.
    - `git config --global color.ui auto`: Makes sure that Git output is coloured.
    - `git config --global merge.conflictstyle diff3`: Displays the original state in a conflict.
@@ -61,26 +61,26 @@ Please note that these are personal notes, so they reflect my own experiences an
 
 ### Introduction to Git and GitHub
 
-[Introduction to Git and GitHub][] teaches you the basics of Git, 
-a version control system, and GitHub, a web-based hosting service for 
-Git repositories. The course covers topics such as creating and cloning 
-repositories, working with branches, and resolving conflicts. 
-It also includes hands-on labs that allow you to practice what 
+[Introduction to Git and GitHub][] teaches you the basics of Git,
+a version control system, and GitHub, a web-based hosting service for
+Git repositories. The course covers topics such as creating and cloning
+repositories, working with branches, and resolving conflicts.
+It also includes hands-on labs that allow you to practice what
 you've learned.
 
 The course is divided into three weeks.
 
 - Week 1, you'll learn about the basics of Git and GitHub. You'll create
-your first repository and clone it onto your computer. 
-You'll also learn about branches and how to use them to track changes 
+your first repository and clone it onto your computer.
+You'll also learn about branches and how to use them to track changes
 to your code.
-- Week 2, you'll learn more about working with branches. You'll learn 
-how to merge branches and how to resolve conflicts. 
-You'll also learn about remote repositories and how to push and pull 
+- Week 2, you'll learn more about working with branches. You'll learn
+how to merge branches and how to resolve conflicts.
+You'll also learn about remote repositories and how to push and pull
 changes from them.
-- Week 3, you'll learn about some advanced Git concepts. You'll learn 
-about tags, which are used to mark specific points in your code history. 
-You'll also learn about rebasing and merging, which are two ways to 
+- Week 3, you'll learn about some advanced Git concepts. You'll learn
+about tags, which are used to mark specific points in your code history.
+You'll also learn about rebasing and merging, which are two ways to
 change the history of your code.
 
 - Week 1, you'll learn about the basics of Git and GitHub. You'll create
@@ -101,18 +101,18 @@ change the history of your code.
 
 ## The Ultimate Git Course
 
-Welcome to **The Ultimate Git Course**! This comprehensive course will 
-take you from a beginner to a proficient user of Git, the industry-standard 
-version control system. Whether you're a developer, designer, or any 
-other professional working with code or files, mastering Git is essential 
+Welcome to **The Ultimate Git Course**! This comprehensive course will
+take you from a beginner to a proficient user of Git, the industry-standard
+version control system. Whether you're a developer, designer, or any
+other professional working with code or files, mastering Git is essential
 for efficient collaboration and project management.
 
 ### Course Overview
 
-This course is designed to provide a hands-on learning experience, 
-with practical examples and exercises to reinforce your understanding. 
-You'll be guided by our experienced instructor, 
-Mosh Hamedani, who has a passion for teaching and a wealth of expertise 
+This course is designed to provide a hands-on learning experience,
+with practical examples and exercises to reinforce your understanding.
+You'll be guided by our experienced instructor,
+Mosh Hamedani, who has a passion for teaching and a wealth of expertise
 in software development.
 
 Throughout the course, you will learn the following topics:
@@ -151,8 +151,8 @@ Throughout the course, you will learn the following topics:
 
 ### Prerequisites
 
-To make the most of this course, you should have a basic understanding 
-of command-line interfaces and programming concepts. Familiarity with 
+To make the most of this course, you should have a basic understanding
+of command-line interfaces and programming concepts. Familiarity with
 any programming language will be beneficial, but it's not mandatory.
 
 ### Getting Started
@@ -164,12 +164,12 @@ any programming language will be beneficial, but it's not mandatory.
 ### Course Resources
 
 - Course materials and exercises can be found in this repository.
-- Join our community forum to connect with other learners and get 
+- Join our community forum to connect with other learners and get
 help when needed.
 
 ### Certification
 
-Upon completing the course, you'll receive a certificate of completion 
+Upon completing the course, you'll receive a certificate of completion
 to showcase your newfound Git skills.
 
 ## Git Code with Mosh
@@ -228,46 +228,46 @@ status in the working tree has not changed since the last commit.
 
 ## git show
 
-The `git show` command is a versatile tool in Git that is used to view 
-expanded details on Git objects such as blobs, trees, tags, and commits. 
+The `git show` command is a versatile tool in Git that is used to view
+expanded details on Git objects such as blobs, trees, tags, and commits.
 Here's a breakdown of what it does:
 
-- **Commits**: It shows the log message and textual diff. It also presents 
+- **Commits**: It shows the log message and textual diff. It also presents
 the merge commit in a special format as produced by `git diff-tree --cc`.
 - **Tags**: It shows the tag message and the referenced objects¹.
 - **Trees**: It shows the names (equivalent to `git ls-tree` with `--name-only`).
 - **Blobs**: It shows the plain contents.
 
-The command takes options applicable to the `git diff-tree` command to 
-control how the changes the commit introduces are shown¹. By default, 
-`git-show` acts against the `HEAD` reference, which always points to 
-the last commit of the current branch. Therefore, you can use 
-`git-show` to display the log message and diff output of the latest 
+The command takes options applicable to the `git diff-tree` command to
+control how the changes the commit introduces are shown¹. By default,
+`git-show` acts against the `HEAD` reference, which always points to
+the last commit of the current branch. Therefore, you can use
+`git-show` to display the log message and diff output of the latest
 commit.
 
-There are several options you can use with `git show` to customize its 
+There are several options you can use with `git show` to customize its
 output, such as:
 
-- `--pretty[=<format>]`: Pretty-print the contents of the commit logs 
+- `--pretty[=<format>]`: Pretty-print the contents of the commit logs
 in a given format.
-- `--abbrev-commit`: Instead of showing the full 40-byte hexadecimal 
+- `--abbrev-commit`: Instead of showing the full 40-byte hexadecimal
 commit object name, show a prefix that names the object uniquely.
 - `--no-abbrev-commit`: Show the full 40-byte hexadecimal commit object name.
-- `--oneline`: This is a shorthand for `--pretty=oneline --abbrev-commit` 
+- `--oneline`: This is a shorthand for `--pretty=oneline --abbrev-commit`
 used together.
-- `--encoding=<encoding>`: Re-code the commit log message in the encoding 
+- `--encoding=<encoding>`: Re-code the commit log message in the encoding
 preferred by the user.
-- `--expand-tabs=<n>`, `--expand-tabs`, `--no-expand-tabs`: Perform a tab 
-expansion (replace each tab with enough spaces to fill to the next 
-display column that is multiple of `<n>`) in the log message 
+- `--expand-tabs=<n>`, `--expand-tabs`, `--no-expand-tabs`: Perform a tab
+expansion (replace each tab with enough spaces to fill to the next
+display column that is multiple of `<n>`) in the log message
 before showing it in the output.
 
-This command is quite useful when you want to examine the details of 
+This command is quite useful when you want to examine the details of
 specific objects in your Git repository.
 
-The `git show` command is used to view detailed information about 
-Git objects, including blobs, trees, tags, and commits. 
-It is similar to the `git log` command, but it provides more detail 
+The `git show` command is used to view detailed information about
+Git objects, including blobs, trees, tags, and commits.
+It is similar to the `git log` command, but it provides more detail
 about each object.
 
 When used to view a commit, `git show` displays the following information:
@@ -282,7 +282,6 @@ When used to view a commit, `git show` displays the following information:
 or to view a range of commits. For example, to view the changes to the file
  `README.md` in the most recent commit, you would use the following command:
 
-
 ```bash
 git show README.md
 ```
@@ -294,8 +293,8 @@ To view all of the commits in the `master` branch that were made by the user
 git show master --author=john.doe
 ```
 
-`git show` is a powerful tool for examining the history of a Git repository. 
-It can be used to troubleshoot problems, track down changes, and learn 
+`git show` is a powerful tool for examining the history of a Git repository.
+It can be used to troubleshoot problems, track down changes, and learn
 more about how a project has evolved over time.
 
 Here are some examples of how `git show` can be used:
@@ -545,7 +544,7 @@ This command is quite useful when you want to examine the details of
 specific objects in your Git repository.
 
 The `git show` command is used to view detailed information about Git objects,
-including blobs, trees, tags, and commits. It is similar to the `git log` 
+including blobs, trees, tags, and commits. It is similar to the `git log`
 command, but it provides more detail about each object.
 
 When used to view a commit, `git show` displays the following information:
@@ -662,62 +661,61 @@ features before performing any major restoration actions.
 
 ## Git `clean`
 
-The `git clean` command is used to remove untracked files and directories 
-from the working tree¹. Untracked files are files that have been created 
-within your repo's working directory but have not yet been added to the 
-repository's tracking index using the `git add` command⁴. 
+The `git clean` command is used to remove untracked files and directories
+from the working tree¹. Untracked files are files that have been created
+within your repo's working directory but have not yet been added to the
+repository's tracking index using the `git add` command⁴.
 
 Here are some common options for `git clean`:
 
-- `-n`: This option performs a “dry run” of `git clean`. It shows you 
+- `-n`: This option performs a “dry run” of `git clean`. It shows you
 which files are going to be removed without actually removing them.
 - `-f`: This option forces the deletion of untracked files.
 - `-d`: This option removes untracked directories.
 - `-x`: This option removes ignored files.
 - `-i`: This option allows you to do an interactive clean.
 
-For example, if you want to see which files will be removed without 
+For example, if you want to see which files will be removed without
 actually removing them, you can use the `-n` option like this: `git clean -n`.
 
-Please note that when fully executed, `git clean` will make a hard filesystem 
-deletion, similar to executing the command line `rm` utility. Make sure you 
+Please note that when fully executed, `git clean` will make a hard filesystem
+deletion, similar to executing the command line `rm` utility. Make sure you
 really want to delete the untracked files before you run it.
 
 ## Browsing History
 
 ### git log --oneline --stat
 
-The `git log --oneline --stat` command is a combination of two options 
-with the `git log` command in Git, a distributed version control system. 
+The `git log --oneline --stat` command is a combination of two options
+with the `git log` command in Git, a distributed version control system.
 Here's what each part does:
 
-- `git log`: This command shows the commit history in reverse chronological 
+- `git log`: This command shows the commit history in reverse chronological
 order. The commits are displayed starting from the most recent commit.
 
-- `--oneline`: This is an option for `git log` that changes the output 
-format to be more compact. Each commit is shown as one line containing 
+- `--oneline`: This is an option for `git log` that changes the output
+format to be more compact. Each commit is shown as one line containing
 the commit hash and the commit message.
 
-- `--stat`: This option shows some stats about each commit, specifically, 
-it shows which files were altered and the relative number of lines that 
+- `--stat`: This option shows some stats about each commit, specifically,
+it shows which files were altered and the relative number of lines that
 were added or deleted from each of them.
 
-So, when you use `git log --oneline --stat`, Git will display each 
-commit as a single line with its hash and message, followed by stats 
-about which files were changed and how many lines were added or deleted 
-in that commit. It's a useful command for getting a high-level overview 
+So, when you use `git log --oneline --stat`, Git will display each
+commit as a single line with its hash and message, followed by stats
+about which files were changed and how many lines were added or deleted
+in that commit. It's a useful command for getting a high-level overview
 of your project history.
-
 
 ### git log --oneline --patch
 
-- `--patch` or `-p`: This option generates patch text for each commit. 
-The patch text shows the actual changes in content that were made in each 
+- `--patch` or `-p`: This option generates patch text for each commit.
+The patch text shows the actual changes in content that were made in each
 commit, line by line.
 
-So, when you use `git log --oneline --patch`, Git will display each 
-commit as a single line with its hash and message, followed by the actual 
-changes made in that commit, line by line. It's a useful command for 
+So, when you use `git log --oneline --patch`, Git will display each
+commit as a single line with its hash and message, followed by the actual
+changes made in that commit, line by line. It's a useful command for
 reviewing your project history in detail.
 
 ### git log --oneline -\<integer\>
@@ -728,7 +726,7 @@ The last three commits for example:
 
 ### git log --oneline --author=\<Name\>
 
-Filter by author 
+Filter by author
 
 `git log --oneline --author="John Reynolds"`
 
@@ -742,44 +740,43 @@ Examples of date filtering:
 
 ### git log --oneline --grep="commit string"
 
-- `--grep="commit string:"`: This option makes `git log` only show 
-__commits__ where the commit message contains the string `"commit string:"`. 
-The `--grep` option is followed by a string, and it causes `git log` 
-__to only list commits__ where that string appears in the commit message.
+- `--grep="commit string:"`: This option makes `git log` only show
+**commits** where the commit message contains the string `"commit string:"`.
+The `--grep` option is followed by a string, and it causes `git log`
+**to only list commits** where that string appears in the commit message.
 
 ### git log --oneline -S="string"
 
 - `-S"string"`: This option makes `git log` only show commits that added or
-removed the string `"string"`. The `-S` option is followed by a string, 
-and it causes `git log` to only list commits where that string was 
+removed the string `"string"`. The `-S` option is followed by a string,
+and it causes `git log` to only list commits where that string was
 added or removed from the codebase.
-
 
 ### git log --oneline \<commit id>..\<commit id>
 
-The `git log --oneline commit_id..commit_id` command in Git shows the 
-commit history between the two specified commit IDs in a compact format. 
+The `git log --oneline commit_id..commit_id` command in Git shows the
+commit history between the two specified commit IDs in a compact format.
 
-- `commit_id..commit_id`: This is a range of commits. Git will show all 
-commits that exist in the second commit ID which don't exist in the first 
-commit ID. In other words, it shows the commits that happened between these 
+- `commit_id..commit_id`: This is a range of commits. Git will show all
+commits that exist in the second commit ID which don't exist in the first
+commit ID. In other words, it shows the commits that happened between these
 two points in the history.
 
-So, when you use `git log --oneline commit_id..commit_id`, Git will 
-display each commit as a single line with its hash and message, 
-but only for commits that are in the range between the two specified 
-commit IDs. It's a useful command for reviewing a specific part of 
+So, when you use `git log --oneline commit_id..commit_id`, Git will
+display each commit as a single line with its hash and message,
+but only for commits that are in the range between the two specified
+commit IDs. It's a useful command for reviewing a specific part of
 your project history.
 
 ### git log --oneline \<filename>
 
-- `filename`: This is the name of a file in your repository. When you 
-specify a filename after `git log`, Git will only show commits where 
+- `filename`: This is the name of a file in your repository. When you
+specify a filename after `git log`, Git will only show commits where
 that file was changed.
 
-So, when you use `git log --oneline filename`, Git will display each 
-commit as a single line with its hash and message, but only for commits 
-where the specified file was changed. It's a useful command for seeing 
+So, when you use `git log --oneline filename`, Git will display each
+commit as a single line with its hash and message, but only for commits
+where the specified file was changed. It's a useful command for seeing
 how a specific file has changed over time.
 
 ### Git Log format
@@ -792,7 +789,7 @@ Example:
 
 ### Alias
 
-Example 
+Example
 
 `git config --global alias.lg "log --pretty=format:'%an committed %h on %cd'"`
 
@@ -800,114 +797,114 @@ Example
 
 ### git shortlog
 
-The `git shortlog` command in Git is used to summarize the output of `git log`. 
-It takes the same arguments as `git log`, but instead of displaying the 
-full commit messages, it groups the commits by author and title, 
+The `git shortlog` command in Git is used to summarize the output of `git log`.
+It takes the same arguments as `git log`, but instead of displaying the
+full commit messages, it groups the commits by author and title,
 making it easy to see who has done what in a repository.
 
 Here's a basic breakdown of what it does:
 
-- `git shortlog`: This command summarizes the output of `git log`. 
+- `git shortlog`: This command summarizes the output of `git log`.
 It groups the commits by author and then by commit title.
 
-This is a useful command when you want to get a quick overview of who has 
-been committing to your repository and what they've been doing. 
-It's often used in open source projects to generate a list of contributions 
+This is a useful command when you want to get a quick overview of who has
+been committing to your repository and what they've been doing.
+It's often used in open source projects to generate a list of contributions
 for release notes or other documentation.
 
 ### git squash merge
 
-In Git, a squash merge is a merge option that allows you to condense the 
-Git history of feature branches when you complete a merge. Using the 
-`git merge --squash` command, you can create a single commit on your 
+In Git, a squash merge is a merge option that allows you to condense the
+Git history of feature branches when you complete a merge. Using the
+`git merge --squash` command, you can create a single commit on your
 main branch with the changes from a feature branch as opposed to having
  all commits from that feature branch added to the history.
 
 Here's a step-by-step breakdown of how it works:
 
-1. **Checkout to the branch you want to merge into**: This is usually 
+1. **Checkout to the branch you want to merge into**: This is usually
 your main or master branch. You can do this with `git checkout main`.
 
-2. **Perform the squash merge**: You can do this with 
-`git merge --squash feature_branch`, where `feature_branch` is the 
+2. **Perform the squash merge**: You can do this with
+`git merge --squash feature_branch`, where `feature_branch` is the
 name of the branch that contains your new feature.
 
-3. **Commit the changes**: After a squash merge, you'll have all the 
-changes from your feature branch staged on your main branch, 
+3. **Commit the changes**: After a squash merge, you'll have all the
+changes from your feature branch staged on your main branch,
 but they aren't committed yet. You can commit them with `git commit`.
 
-The result is that your feature branch's history is left intact, but 
-when you look at the history of your main branch, it looks like one 
-single commit was made with all the changes from your feature branch. 
-This can be useful for keeping your main branch history clean and 
+The result is that your feature branch's history is left intact, but
+when you look at the history of your main branch, it looks like one
+single commit was made with all the changes from your feature branch.
+This can be useful for keeping your main branch history clean and
 understandable.
 
-It's important to note that squash merging is a one-way operation. 
-Once it's done, there's no easy way to go back and get the individual 
-commits from a squashed branch. So it's a good idea to be sure about 
+It's important to note that squash merging is a one-way operation.
+Once it's done, there's no easy way to go back and get the individual
+commits from a squashed branch. So it's a good idea to be sure about
 using this option before you do it.
 
 ### git rebase
 
-In Git, `rebase` is a command that allows you to integrate changes from 
-one branch into another. It's an alternative to the `git merge` command. 
+In Git, `rebase` is a command that allows you to integrate changes from
+one branch into another. It's an alternative to the `git merge` command.
 The primary reason to use `rebase` is to maintain a linear project history.
 
 Here's a step-by-step breakdown of how it works:
 
-1. **Checkout to the branch you want to rebase**: This is usually your 
-feature branch that you want to update with changes from the main branch. 
+1. **Checkout to the branch you want to rebase**: This is usually your
+feature branch that you want to update with changes from the main branch.
 You can do this with `git checkout feature_branch`.
 
-2. **Perform the rebase**: You can do this with `git rebase main`, where 
-`main` is the branch that has the new commits you want to include in your 
+2. **Perform the rebase**: You can do this with `git rebase main`, where
+`main` is the branch that has the new commits you want to include in your
 feature branch.
 
-The result is that your feature branch will be rewritten as if it was based 
-on the head of the main branch, as opposed to the commit it was actually 
-based on. This makes your feature branch up-to-date with the latest code 
+The result is that your feature branch will be rewritten as if it was based
+on the head of the main branch, as opposed to the commit it was actually
+based on. This makes your feature branch up-to-date with the latest code
 on the main branch.
 
-During a rebase, conflicts may arise if there are changes in both branches 
-that touch the same parts of the code. Git will pause and allow you to resolve 
-those conflicts manually. Once resolved, you can continue the rebase with 
+During a rebase, conflicts may arise if there are changes in both branches
+that touch the same parts of the code. Git will pause and allow you to resolve
+those conflicts manually. Once resolved, you can continue the rebase with
 `git rebase --continue`.
 
-It's important to note that because `rebase` changes the commit history 
-by creating new commits for each commit in the original branch, 
-it should be used with caution. It's generally recommended not to use 
+It's important to note that because `rebase` changes the commit history
+by creating new commits for each commit in the original branch,
+it should be used with caution. It's generally recommended not to use
 `rebase` on public branches that others are working on.
 
-Remember, always create a backup or use a temporary branch when performing 
-operations that rewrite history (like `git rebase`) if you're unsure 
+Remember, always create a backup or use a temporary branch when performing
+operations that rewrite history (like `git rebase`) if you're unsure
 about the process.
 
 ### git cherry-pick
 
-In Git, `cherry-pick` is a powerful command that enables arbitrary Git 
-commits to be picked by reference and appended to the current working HEAD. 
-Cherry picking is the act of picking a commit from a branch and applying 
+In Git, `cherry-pick` is a powerful command that enables arbitrary Git
+commits to be picked by reference and appended to the current working HEAD.
+Cherry picking is the act of picking a commit from a branch and applying
 it to another.
 
 Here's a step-by-step breakdown of how it works:
 
-1. **Identify the commit you want to pick**: This is usually done by looking 
+1. **Identify the commit you want to pick**: This is usually done by looking
 at the log of another branch with `git log`.
 
-2. **Apply the commit**: You can do this with `git cherry-pick commit_id`, 
+2. **Apply the commit**: You can do this with `git cherry-pick commit_id`,
 where `commit_id` is the hash of the commit you want to apply.
 
-The result is that the changes introduced by the specified commit are 
-applied to your current branch. A new commit is created with this change, 
+The result is that the changes introduced by the specified commit are
+applied to your current branch. A new commit is created with this change,
 and your branch's history remains linear.
 
-It's important to note that cherry picking only applies the changes introduced 
-by the commit you pick, not the entire state of the repository at that commit. 
+It's important to note that cherry picking only applies the changes introduced
+by the commit you pick, not the entire state of the repository at that commit.
 Changes made in other commits are not included.
 
-Cherry picking can be very useful when you want to get some useful work 
-from another branch without merging or pulling in all changes from that 
-branch. But be careful: cherry picking can sometimes lead to duplicate 
+Cherry picking can be very useful when you want to get some useful work
+from another branch without merging or pulling in all changes from that
+branch. But be careful: cherry picking can sometimes lead to duplicate
 commits and could make your history harder to understand.
 
 ### Git `clean1`

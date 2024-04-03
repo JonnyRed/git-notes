@@ -964,5 +964,5 @@ git push -u origin main
 1. Under your repository name, click Settings.
 1. Under Danger Zone, click Delete this repository.
 1. Read the warnings.
-1. To verify that you're deleting the correct repository, type the name 
+1. To verify that you're deleting the correct repository, type the name
 of the repository you want to delete.
