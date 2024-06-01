@@ -456,7 +456,7 @@ Let's break down each component:
 
 1. `<type>`: The type of the commit. It can be one of the following:
 
-   * **feat__: A new feature
+   * __feat__: A new feature
    * __fix__: A bug fix
    * __docs__: Documentation changes
    * __style__: Code style changes (e.g., formatting)
